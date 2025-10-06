@@ -7,7 +7,8 @@
   <meta name="description" content="Gente Extraña — homepage for Endora Marie McNeary" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+  <!-- Added a grittier cursive-style font -->
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#0f0f0f;
@@ -48,7 +49,12 @@
     }
     .name-block{margin:0 0 18px 0;}
     .name{
-      font-family: 'Great Vibes', cursive; font-size:38px; line-height:1; margin:0 0 8px 0;
+      font-family: 'Rock Salt', cursive;
+      font-size:28px; /* 25% smaller */
+      line-height:1.1;
+      margin:0 0 8px 0;
+      letter-spacing:1px;
+      text-transform:none;
     }
     .address{margin:0; color:var(--muted)}
 
@@ -120,7 +126,7 @@
     @media (max-width: 860px){
       :root{ --sidebar-w: 120px }
       .page-title{font-size:42px}
-      .name{font-size:30px}
+      .name{font-size:22px}
     }
     @media (max-width: 640px){
       .layout{flex-direction:column}
@@ -171,6 +177,10 @@
   </script>
 </body>
 </html>
+      
+      
+  
+
 
 
  

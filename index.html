@@ -10,27 +10,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0f0f0f;          /* dark canvas similar vibe */
-      --fg:#f0f0f0;          /* main text */
-      --muted:#bdbdbd;       /* secondary text */
-      --accent:#f5f5f5;      /* lines */
-      --link:#f0f0f0;        /* links */
-      --sidebar-w: 180px;    /* left nav width */
-      --maxw: 1100px;        /* content max width */
+      --bg:#0f0f0f;
+      --fg:#f0f0f0;
+      --muted:#bdbdbd;
+      --accent:#f5f5f5;
+      --link:#f0f0f0;
+      --sidebar-w: 180px;
+      --maxw: 1100px;
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0; background:var(--bg); color:var(--fg);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       line-height:1.5;
     }
 
     a{color:var(--link); text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* Layout */
     .layout{display:flex; min-height:100vh}
 
     .sidebar{
@@ -44,7 +43,6 @@
 
     .content{flex:1; min-width:0;}
 
-    /* Header block at top of content */
     .header{
       max-width:var(--maxw); margin:0 auto; padding:28px 24px 0 24px; border-bottom:1px solid #2a2a2a;
     }
@@ -56,17 +54,69 @@
 
     .page-title{font-size:64px; line-height:1; margin:18px 0 24px 0; font-weight:800;}
 
-    /* Main body */
-    .main{max-width:var(--maxw); margin:0 auto; padding:20px 24px 64px 24px;}
-    .section{padding:28px 0; border-bottom:1px solid #222}
-    .section:last-child{border-bottom:none}
-    .section h2{margin:0 0 8px 0; font-size:22px}
-    .section p{margin:0 0 10px 0; color:#d8d8d8}
+    /* Thumbnail link */
+    .thumbnail-container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:40px 24px;
+      display:flex;
+      justify-content:center;
+    }
+    .thumbnail{
+      position:relative;
+      display:block;
+      width:100%;
+      max-width:720px;
+      aspect-ratio:16/9;
+      border:2px solid #333;
+      border-radius:8px;
+      overflow:hidden;
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .thumbnail:hover{
+      transform:scale(1.02);
+      box-shadow:0 6px 28px rgba(0,0,0,0.6);
+    }
+    .thumbnail img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
-    /* Footer */
+    /* Play button overlay */
+    .play-button {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:90px;
+      height:90px;
+      background:rgba(0,0,0,0.6);
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      transition:background 0.3s ease, transform 0.3s ease;
+    }
+    .play-button::before {
+      content: "";
+      display:block;
+      width:0;
+      height:0;
+      border-left:30px solid white;
+      border-top:18px solid transparent;
+      border-bottom:18px solid transparent;
+      margin-left:8px;
+    }
+    .thumbnail:hover .play-button {
+      background:rgba(255,0,0,0.8);
+      transform:translate(-50%, -50%) scale(1.1);
+    }
+
     footer{max-width:var(--maxw); margin:0 auto; padding:24px; color:var(--muted)}
 
-    /* Responsive */
     @media (max-width: 860px){
       :root{ --sidebar-w: 120px }
       .page-title{font-size:42px}
@@ -81,7 +131,6 @@
 </head>
 <body>
   <div class="layout">
-    <!-- Left Sidebar Nav -->
     <aside class="sidebar">
       <div class="brand">Menu</div>
       <nav class="nav">
@@ -92,9 +141,7 @@
       </nav>
     </aside>
 
-    <!-- Content -->
     <div class="content" id="home">
-      <!-- Address / Name header block and big page title -->
       <header class="header">
         <div class="name-block">
           <h1 class="name">Endora Marie McNeary</h1>
@@ -106,23 +153,12 @@
         </div>
       </header>
 
-      <!-- Main sections (editable content) -->
-      <main class="main">
-        <section class="section" id="about">
-          <h2>About</h2>
-          <p>Short blurb about the project, vibe, and current focus. Replace this text with your story, mission, or artist statement. You can add images, lists, and links below.</p>
-        </section>
-
-        <section class="section" id="coming-soon">
-          <h2>Coming Soon</h2>
-          <p>Teasers for upcoming releases, the “People Are Strange / Gente Extraña” video, EP notes, or dates. Consider adding thumbnails or a simple grid of cards.</p>
-        </section>
-
-        <section class="section" id="articles">
-          <h2>Articles</h2>
-          <p>Long‑form posts, notes, and updates. You can convert this into a blog later or link to Bandcamp/YouTube write‑ups.</p>
-        </section>
-      </main>
+      <div class="thumbnail-container">
+        <a class="thumbnail" href="https://youtu.be/ykK06AKzhLg?si=b7awTobTY_o6qnKs" target="_blank">
+          <img src="https://img.youtube.com/vi/ykK06AKzhLg/maxresdefault.jpg" alt="Gente Extraña YouTube Thumbnail">
+          <div class="play-button"></div>
+        </a>
+      </div>
 
       <footer>
         © <span id="year"></span> Endora. All rights reserved.
@@ -135,6 +171,7 @@
   </script>
 </body>
 </html>
+
 
  
    

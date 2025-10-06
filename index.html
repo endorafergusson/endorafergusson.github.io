@@ -7,8 +7,8 @@
   <meta name="description" content="Gente Extraña — homepage for Endora Marie McNeary" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Added a grittier cursive-style font -->
-  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Switch back to the original cursive and add a grain overlay effect on the text -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#0f0f0f;
@@ -49,12 +49,24 @@
     }
     .name-block{margin:0 0 18px 0;}
     .name{
-      font-family: 'Rock Salt', cursive;
-      font-size:28px; /* 25% smaller */
+      font-family: 'Great Vibes', cursive; /* original cursive */
+      font-size:28px; /* ~25% smaller than original */
       line-height:1.1;
       margin:0 0 8px 0;
-      letter-spacing:1px;
-      text-transform:none;
+      letter-spacing:.5px;
+      position:relative;            /* enable overlay positioning */
+      display:inline-block;          /* size overlay to text box */
+    }
+    /* Grain overlay using inline SVG noise with blend mode */
+    .name::after{
+      content:"";
+      position:absolute;
+      inset:-6px -8px;               /* slight bleed around strokes */
+      pointer-events:none;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='120'><filter id='noise'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23noise)'/></svg>");
+      background-size:cover;
+      mix-blend-mode:multiply;      /* blend grain into text */
+      opacity:.22;                   /* overall grain strength */
     }
     .address{margin:0; color:var(--muted)}
 
@@ -177,6 +189,7 @@
   </script>
 </body>
 </html>
+
 
       
       

@@ -7,7 +7,6 @@
   <meta name="description" content="Gente Extraña — homepage for Endora Marie McNeary" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Switch back to the original cursive and add a grain overlay effect on the text -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -49,30 +48,28 @@
     }
     .name-block{margin:0 0 18px 0;}
     .name{
-      font-family: 'Great Vibes', cursive; /* original cursive */
-      font-size:28px; /* ~25% smaller than original */
+      font-family: 'Great Vibes', cursive;
+      font-size:28px;
       line-height:1.1;
       margin:0 0 8px 0;
       letter-spacing:.5px;
-      position:relative;            /* enable overlay positioning */
-      display:inline-block;          /* size overlay to text box */
+      position:relative;
+      display:inline-block;
     }
-    /* Grain overlay using inline SVG noise with blend mode */
     .name::after{
       content:"";
       position:absolute;
-      inset:-6px -8px;               /* slight bleed around strokes */
+      inset:-6px -8px;
       pointer-events:none;
       background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='120'><filter id='noise'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23noise)'/></svg>");
       background-size:cover;
-      mix-blend-mode:multiply;      /* blend grain into text */
-      opacity:.22;                   /* overall grain strength */
+      mix-blend-mode:multiply;
+      opacity:.22;
     }
     .address{margin:0; color:var(--muted)}
 
     .page-title{font-size:64px; line-height:1; margin:18px 0 24px 0; font-weight:800;}
 
-    /* Thumbnail link */
     .thumbnail-container{
       max-width:var(--maxw);
       margin:0 auto;
@@ -103,7 +100,6 @@
       display:block;
     }
 
-    /* Play button overlay */
     .play-button {
       position:absolute;
       top:50%;
@@ -133,6 +129,17 @@
       transform:translate(-50%, -50%) scale(1.1);
     }
 
+    .body-text {
+      max-width:720px;
+      margin:0 auto;
+      padding:20px 24px 60px 24px;
+      font-size:18px;
+      line-height:1.7;
+      color:#e0e0e0;
+      font-weight:300;
+      white-space:pre-line;
+    }
+
     footer{max-width:var(--maxw); margin:0 auto; padding:24px; color:var(--muted)}
 
     @media (max-width: 860px){
@@ -145,7 +152,38 @@
       .sidebar{position:relative; height:auto; width:100%; border-right:none; border-bottom:1px solid #2a2a2a;}
       .nav{flex-direction:row; flex-wrap:wrap; gap:16px}
     }
-  </style>
+      .body-text {
+      max-width:640px; /* Slightly narrower for zine layout */
+      margin:0 auto;
+      padding:16px 24px 72px 24px;
+      font-size:18px;
+      line-height:1.75;
+      color:#e6e6e6;
+      font-weight:300;
+    }
+    .body-text p{margin:0 0 18px 0}
+
+    /* Background highlight (marker style) */
+    .hl{
+      background:linear-gradient(transparent 60%, rgba(255,155,190,.32) 60%);
+      padding:0 .04em; /* tiny breathing room */
+    }
+
+    /* Zine-style block quote (bold, not italic) */
+    .pull-quote{
+      margin:28px auto; 
+      padding:14px 16px; 
+      font-weight:800; 
+      letter-spacing:.02em;
+      line-height:1.35; 
+      background:rgba(255,255,255,.04);
+      border-left:6px solid #f0f0f0;
+      text-transform:none; 
+      max-width:640px;
+    }
+    .pull-quote span.hl{background:linear-gradient(transparent 55%, rgba(255,200,120,.35) 55%)}
+
+    </style>
 </head>
 <body>
   <div class="layout">
@@ -178,6 +216,8 @@
         </a>
       </div>
 
+      <div class="body-text">
+
       <footer>
         © <span id="year"></span> Endora. All rights reserved.
       </footer>
@@ -189,6 +229,7 @@
   </script>
 </body>
 </html>
+
 
 
       

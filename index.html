@@ -70,6 +70,37 @@
 
     .page-title{font-size:64px; line-height:1; margin:18px 0 24px 0; font-weight:800;}
 
+    /* Minimalist social icons */
+    .socials{display:flex; gap:16px; align-items:center; padding:8px 0 22px 0}
+    .socials a{background:transparent !important; width:auto; height:auto; border-radius:0; box-shadow:none; padding:0; position:relative;}
+    .socials a:hover{transform:translateY(-2px)}
+    .ico{width:30px; height:30px}
+    .yt{color:#FF0000}
+    .sc{color:#FF7700}
+    .bc{color:#1DA0C3}
+    .socials a[title]{position:relative}
+    .socials a[title]::after{
+      content:attr(title);
+      position:absolute;
+      bottom:-30px;
+      left:50%;
+      transform:translateX(-50%);
+      background:rgba(0,0,0,0.8);
+      color:#fff;
+      font-size:12px;
+      padding:4px 8px;
+      border-radius:4px;
+      white-space:nowrap;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .2s ease;
+    }
+    .socials a:hover::after{opacity:1}
+
+    @media (max-width:640px){
+      .socials{justify-content:center}
+    }
+
     .thumbnail-container{
       max-width:var(--maxw);
       margin:0 auto;
@@ -130,30 +161,7 @@
     }
 
     .body-text {
-      max-width:720px;
-      margin:0 auto;
-      padding:20px 24px 60px 24px;
-      font-size:18px;
-      line-height:1.7;
-      color:#e0e0e0;
-      font-weight:300;
-      white-space:pre-line;
-    }
-
-    footer{max-width:var(--maxw); margin:0 auto; padding:24px; color:var(--muted)}
-
-    @media (max-width: 860px){
-      :root{ --sidebar-w: 120px }
-      .page-title{font-size:42px}
-      .name{font-size:22px}
-    }
-    @media (max-width: 640px){
-      .layout{flex-direction:column}
-      .sidebar{position:relative; height:auto; width:100%; border-right:none; border-bottom:1px solid #2a2a2a;}
-      .nav{flex-direction:row; flex-wrap:wrap; gap:16px}
-    }
-      .body-text {
-      max-width:640px; /* Slightly narrower for zine layout */
+      max-width:640px; 
       margin:0 auto;
       padding:16px 24px 72px 24px;
       font-size:18px;
@@ -162,14 +170,10 @@
       font-weight:300;
     }
     .body-text p{margin:0 0 18px 0}
-
-    /* Background highlight (marker style) */
     .hl{
       background:linear-gradient(transparent 60%, rgba(255,155,190,.32) 60%);
-      padding:0 .04em; /* tiny breathing room */
+      padding:0 .04em;
     }
-
-    /* Zine-style block quote (bold, not italic) */
     .pull-quote{
       margin:28px auto; 
       padding:14px 16px; 
@@ -183,13 +187,22 @@
     }
     .pull-quote span.hl{background:linear-gradient(transparent 55%, rgba(255,200,120,.35) 55%)}
 
-        /* About page (clean, editorial) */
     .about-wrap{max-width:760px; margin:0 auto; padding:24px 24px 80px 24px}
     .about-wrap h2{margin:12px 0 16px 0; font-size:24px; font-weight:800; letter-spacing:.01em}
     .about-body{font-family: Georgia, "Times New Roman", Times, serif; font-size:18px; line-height:1.8; color:#e8e8e8; font-weight:400}
     .about-body p{margin:0 0 18px 0}
 
-    </style>
+    @media (max-width: 860px){
+      :root{ --sidebar-w: 120px }
+      .page-title{font-size:42px}
+      .name{font-size:22px}
+    }
+    @media (max-width: 640px){
+      .layout{flex-direction:column}
+      .sidebar{position:relative; height:auto; width:100%; border-right:none; border-bottom:1px solid #2a2a2a;}
+      .nav{flex-direction:row; flex-wrap:wrap; gap:16px}
+    }
+  </style>
 </head>
 <body>
   <div class="layout">
@@ -212,6 +225,18 @@
         </div>
         <div>
           <div class="page-title">Gente Extraña</div>
+        </div>
+        <!-- Minimalist icons with tooltips -->
+        <div class="socials" aria-label="Music links">
+          <a href="https://www.youtube.com/@jefachica" class="yt" title="YouTube" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg class="ico" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M23.498 6.186a2.97 2.97 0 0 0-2.09-2.103C19.665 3.5 12 3.5 12 3.5s-7.665 0-9.408.583a2.97 2.97 0 0 0-2.09 2.103C0 7.937 0 12.01 0 12.01s0 4.072.502 5.823a2.97 2.97 0 0 0 2.09 2.103c1.743.583 9.408.583 9.408.583s7.665 0 9.408-.583a2.97 2.97 0 0 0 2.09-2.103C24 16.082 24 12.01 24 12.01s0-4.073-.502-5.824zM9.545 15.568V8.454l6.545 3.558-6.545 3.556z"/></svg>
+          </a>
+          <a href="https://soundcloud.com/jefachica" class="sc" title="SoundCloud" target="_blank" rel="noopener" aria-label="SoundCloud">
+            <svg class="ico" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.212 8.162a4.726 4.726 0 0 0-2.4.635 6.2 6.2 0 0 0-6.674 0 4.732 4.732 0 0 0-2.4-.635C2.384 8.162 0 10.527 0 13.408S2.384 18.654 5.738 18.654c1.91 0 3.6-1.047 4.558-2.601a6.178 6.178 0 0 0 6.674 0c.958 1.554 2.648 2.6 4.558 2.6 3.354 0 5.738-2.366 5.738-5.246 0-2.881-2.384-5.246-5.738-5.246z"/></svg>
+          </a>
+          <a href="https://jefachica.bandcamp.com/?from=viewsite_dashboard" class="bc" title="Bandcamp" target="_blank" rel="noopener" aria-label="Bandcamp">
+            <svg class="ico" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M0 3.54v16.92h24V3.54H0zm9.203 2.807h5.738l-4.144 11.306H5.059l4.144-11.306z"/></svg>
+          </a>
         </div>
       </header>
 
@@ -254,6 +279,7 @@
   </script>
 </body>
 </html>
+
 
 
 

@@ -187,9 +187,19 @@
     }
     .pull-quote span.hl{background:linear-gradient(transparent 55%, rgba(255,200,120,.35) 55%)}
 
+    /* About page theme inversion */
+    .about-section{
+      background:#ffffff;
+      color:#0a0a0a;
+      padding:80px 0;
+    }
+    .about-section .about-wrap{background:#ffffff;}
+    .about-section h2{color:#000000;}
+    .about-section .about-body{color:#1a1a1a;}
+
     .about-wrap{max-width:760px; margin:0 auto; padding:24px 24px 80px 24px}
     .about-wrap h2{margin:12px 0 16px 0; font-size:24px; font-weight:800; letter-spacing:.01em}
-    .about-body{font-family: Georgia, "Times New Roman", Times, serif; font-size:18px; line-height:1.8; color:#e8e8e8; font-weight:400}
+    .about-body{font-family: Georgia, "Times New Roman", Times, serif; font-size:18px; line-height:1.8; font-weight:400}
     .about-body p{margin:0 0 18px 0}
 
     @media (max-width: 860px){
@@ -226,7 +236,6 @@
         <div>
           <div class="page-title">Gente Extraña</div>
         </div>
-        <!-- Minimalist icons with tooltips -->
         <div class="socials" aria-label="Music links">
           <a href="https://www.youtube.com/@jefachica" class="yt" title="YouTube" target="_blank" rel="noopener" aria-label="YouTube">
             <svg class="ico" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M23.498 6.186a2.97 2.97 0 0 0-2.09-2.103C19.665 3.5 12 3.5 12 3.5s-7.665 0-9.408.583a2.97 2.97 0 0 0-2.09 2.103C0 7.937 0 12.01 0 12.01s0 4.072.502 5.823a2.97 2.97 0 0 0 2.09 2.103c1.743.583 9.408.583 9.408.583s7.665 0 9.408-.583a2.97 2.97 0 0 0 2.09-2.103C24 16.082 24 12.01 24 12.01s0-4.073-.502-5.824zM9.545 15.568V8.454l6.545 3.558-6.545 3.556z"/></svg>
@@ -259,27 +268,19 @@
         <p>By <span class="hl">blending languages, sounds, and memories</span>, I reclaim my originality. I embrace the contradictions. I honor the wounds and the wonders. And I transform the fragments of loss into something whole, sublime, and defiantly my own.</p>
       </div>
 
-      <section class="about-wrap" id="about">
-        <h2>About</h2>
-        <div class="about-body">
-          <p>My work lives at the intersection of sound, storytelling, and identity. I’m drawn to music that dissolves genre borders — where psychedelia meets reggaetón, where industrial pulses collide with folkloric rhythms, where rock, ambient, and club music braid into one voice. I build worlds from distortion and melody, blending warm analog textures with digital manipulation, field recordings with synthetic beats.</p>
+      <section class="about-section" id="about">
+        <div class="about-wrap">
+          <h2>About</h2>
+          <div class="about-body">
+            <p>My work lives at the intersection of sound, storytelling, and identity. I’m drawn to music that dissolves genre borders — where psychedelia meets reggaetón, where industrial pulses collide with folkloric rhythms, where rock, ambient, and club music braid into one voice. I build worlds from distortion and melody, blending warm analog textures with digital manipulation, field recordings with synthetic beats.</p>
 
-          <p>Outside of music, I write and work across journalism, creative direction, and visual storytelling. My background in writing informs how I approach sound — attentive to structure, pacing, and subtext — and helps me build cohesive narratives that stretch beyond a single track or performance. Whether I’m producing, performing, or publishing, my goal is always the same: to make work that is deeply felt, fiercely original, and defiantly human.</p>
+            <p>Outside of music, I write and work across journalism, creative direction, and visual storytelling. My background in writing informs how I approach sound — attentive to structure, pacing, and subtext — and helps me build cohesive narratives that stretch beyond a single track or performance. Whether I’m producing, performing, or publishing, my goal is always the same: to make work that is deeply felt, fiercely original, and defiantly human.</p>
+          </div>
         </div>
       </section>
 
       <footer>
-        © <span id="year"></span> Endora. All rights reserved.
-      </footer>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-
+        © <span id
 
 
 

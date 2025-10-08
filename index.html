@@ -212,7 +212,19 @@
       .sidebar{position:relative; height:auto; width:100%; border-right:none; border-bottom:1px solid #2a2a2a;}
       .nav{flex-direction:row; flex-wrap:wrap; gap:16px}
     }
-  </style>
+      /* Articles list */
+    .articles-wrap{max-width:860px;margin:0 auto;padding:24px 24px 96px 24px}
+    .articles-head{display:flex;align-items:center;gap:10px;margin:8px 0 20px 0}
+    .pin{display:inline-flex;align-items:center;gap:6px;background:#ffd166;color:#111;font-weight:800;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.02em}
+    .article-card{display:flex;flex-direction:column;gap:6px;padding:14px 14px;border:1px solid #2a2a2a;border-radius:10px;background:rgba(255,255,255,.02)}
+    .article-card a{font-weight:700;text-decoration:none}
+    .meta{color:#bdbdbd;font-size:13px}
+    .articles-list{display:grid;grid-template-columns:1fr;gap:14px}
+    .archive-link{margin-top:16px}
+
+    /* Light theme inside about-section doesn't affect articles; keep dark. */
+
+    </style>
 </head>
 <body>
   <div class="layout">
@@ -279,8 +291,27 @@
         </div>
       </section>
 
+      <!-- Articles (dark theme) -->
+      <section class="articles-wrap" id="articles">
+        <div class="articles-head">
+          <h2 style="margin:0">Articles</h2>
+          <span class="pin" title="Pinned to top">📌 Pinned</span>
+        </div>
+        <div class="article-card">
+          <a href="https://afropop.org/articles/tokischa-peralta-overcomes-backlash-with-her-whole-new-show" target="_blank" rel="noopener">Tokischa Peralta Overcomes Backlash With Attitude</a>
+          <div class="meta">Afropop Worldwide · Mar 8, 2023 · by Endora McNeary</div>
+          <p style="margin:6px 0 0 0;color:#dcdcdc">A feature on Tokischa’s rise, artistic controversy, and unapologetic vision.</p>
+        </div>
+
+        <div class="archive-link">
+          <p class="meta">Full archive:</p>
+          <a href="https://endoramcneary.journoportfolio.com/" target="_blank" rel="noopener">endoramcneary.journoportfolio.com →</a>
+        </div>
+      </section>
+
       <footer>
         © <span id
+
 
 
 

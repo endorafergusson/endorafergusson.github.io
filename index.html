@@ -1,115 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Endora's Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gente Extraña — Endora</title>
+  <meta name="description" content="Gente Extraña — homepage for Endora Marie McNeary" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    :root{
+      --bg:#0f0f0f;
+      --fg:#f0f0f0;
+      --muted:#bdbdbd;
+      --accent:#f5f5f5;
+      --link:#f0f0f0;
+      --maxw: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: var(--link); text-underline-offset: 2px; }
+    a:hover { opacity:.85; }
+
+    .wrap{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom: 28px;
+    }
+
+    .brand{
+      display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+    }
+    .brand h1{
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 1;
       margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      height: 100vh;
+      letter-spacing:.4px;
+      color: var(--accent);
+    }
+    .brand .subtitle{
+      color: var(--muted);
+      font-weight: 400;
+      font-size: clamp(13px, 1.9vw, 16px);
+      letter-spacing:.2px;
     }
 
-    /* Left sidebar */
-    .sidebar {
-      width: 150px;
-      background-color: #111;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
+    nav a{
+      text-decoration:none;
+      margin-left: 14px;
+      font-size: 14px;
+      color: var(--muted);
+      border:1px solid rgba(255,255,255,.08);
+      padding: 6px 10px;
+      border-radius: 999px;
     }
 
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      margin-bottom: 10px;
-      font-weight: bold;
+    .hero{
+      margin: 8px 0 22px;
+    }
+    .hero p{
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 56ch;
+      line-height:1.6;
     }
 
-    .sidebar a:hover {
-      text-decoration: underline;
+    /* Notification banner */
+    .update-note{
+      margin: 16px 0 22px;
+      padding: .8rem 1rem;
+      border: 1px dashed rgba(255,255,255,.45);
+      background: rgba(255,255,255,.04);
+      border-radius: 10px;
+      font-size: .98rem;
+      letter-spacing:.2px;
+    }
+    .update-note strong{ font-weight:600; }
+
+    /* Responsive video */
+    .video{
+      margin: 8px 0 28px;
+    }
+    .video .frame{
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
+    .video iframe{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      border:0;
     }
 
-    /* Main content area */
-    .main {
-      flex-grow: 1;
-      background-color: #f5f5f5;
-      display: flex;
-      flex-direction: column;
+    .links{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin: 6px 0 40px;
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      text-decoration:none;
+      font-size:14px;
+      color: var(--fg);
+      background: rgba(255,255,255,.03);
     }
 
-    /* Top bar */
-    .topbar {
-      height: 50px;
-      background-color: #222;
-      color: white;
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
+    footer{
+      margin-top:40px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: 14px;
+      display:flex; flex-wrap:wrap; gap:16px;
+      justify-content:space-between; align-items:flex-start;
     }
-
-    .topbar a {
-      color: white;
-      text-decoration: none;
-      margin-right: 15px;
-    }
-
-    .topbar a:hover {
-      text-decoration: underline;
-    }
-
-    /* Content area */
-    .content {
-      flex-grow: 1;
-      padding: 20px;
-      overflow-y: auto;
-    }
-
-    /* Announcement box */
-    .announcement {
-      background-color: #fff3cd;
-      color: #856404;
-      border: 1px solid #ffeeba;
-      padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      font-weight: bold;
-      text-align: center;
-    }
+    .addr { white-space: pre-line; }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <h1>Gente Extraña</h1>
+        <span class="subtitle">by Endora</span>
+      </div>
+      <nav aria-label="primary">
+        <a href="#video">Video</a>
+        <a href="#listen">Listen</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <div class="sidebar">
-    <a href="about.html">About Me</a>
-    <a href="by-lines.html">By-Lines</a>
-  </div>
+    <main>
+      <section class="hero">
+        <p>
+          A moody, boardwalk-meets-funhouse alt-Latin project, stitched from memory and motion. This is the home for the single, visuals, and release notes.
+        </p>
+      </section>
 
-  <div class="main">
-    <div class="topbar">
-      <a href="https://soundcloud.com" target="_blank">SoundCloud</a>
-      <a href="https://youtube.com" target="_blank">YouTube</a>
-      <a href="https://bandcamp.com" target="_blank">Bandcamp</a>
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-    </div>
-
-    <div class="content">
-      <h1>Welcome to my site</h1>
-      <p>This is where your main content will go. You can add text, images, embeds, etc.</p>
-
-      <!-- Announcement about new mix/video -->
-      <div class="announcement">
-        ✨ A new mix & official music video will replace this demo soon — stay tuned. ✨
+      <!-- Notification banner -->
+      <div class="update-note" role="status" aria-live="polite">
+        ✨ <strong>Heads up:</strong> a <strong>new mix</strong> & the <strong>official music video</strong> will replace this demo soon. Stay tuned. ✨
       </div>
 
-      <!-- Example YouTube thumbnail or embed -->
-      <img src="youtube-thumbnail.jpg" alt="YouTube demo thumbnail" width="560" height="315">
-    </div>
+      <!-- Video -->
+      <section id="video" class="video" aria-label="Featured video">
+        <div class="frame">
+          <!-- Replace YOUR_YOUTUBE_VIDEO_ID below -->
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID"
+            title="Gente Extraña — Official Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <!-- Listen / Links -->
+      <section id="listen" class="links" aria-label="Listen & Follow">
+        <a class="chip" href="https://soundcloud.com/" target="_blank" rel="noopener">SoundCloud</a>
+        <a class="chip" href="https://bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a>
+        <a class="chip" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+        <a class="chip" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <!-- Add/remove as you like -->
+      </section>
+
+      <footer id="contact">
+        <div>© <span id="y"></span> Endora</div>
+        <div class="addr">
+          <!-- Update this with your actual mailing details -->
+          PO Box ___ • Danbury, CT 0____ • United States
+        </div>
+      </footer>
+    </main>
   </div>
 
+  <script>
+    // auto-year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
 

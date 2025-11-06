@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gente Extraña — Endora</title>
   <meta name="description" content="Gente Extraña — homepage for Endora Marie McNeary" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
   <style>
     :root{
       --bg:#0f0f0f;
@@ -18,197 +15,331 @@
       --muted:#bdbdbd;
       --accent:#f5f5f5;
       --link:#f0f0f0;
+      --sidebar-w: 180px;
       --maxw: 1100px;
     }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
-      margin:0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.5;
     }
 
-    a { color: var(--link); text-underline-offset: 2px; }
-    a:hover { opacity:.85; }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    .wrap{
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 28px 20px 64px;
+    .layout{display:flex; min-height:100vh}
+
+    .sidebar{
+      position:sticky; top:0; align-self:flex-start; height:100vh;
+      width:var(--sidebar-w); padding:24px 16px; border-right:1px solid #2a2a2a;
+      display:flex; flex-direction:column; gap:14px; letter-spacing:.2px;
+    }
+    .brand{font-weight:800; font-size:14px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted)}
+    .nav{display:flex; flex-direction:column; gap:10px; margin-top:8px}
+    .nav a{font-weight:600}
+
+    .content{flex:1; min-width:0;}
+
+    .header{
+      max-width:var(--maxw); margin:0 auto; padding:28px 24px 0 24px; border-bottom:1px solid #2a2a2a;
+    }
+    .name-block{margin:0 0 18px 0;}
+    .name{
+      font-family: 'Great Vibes', cursive;
+      font-size:28px;
+      line-height:1.1;
+      margin:0 0 8px 0;
+      letter-spacing:.5px;
+      position:relative;
+      display:inline-block;
+    }
+    .name::after{
+      content:"";
+      position:absolute;
+      inset:-6px -8px;
+      pointer-events:none;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='120'><filter id='noise'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23noise)'/></svg>");
+      background-size:cover;
+      mix-blend-mode:multiply;
+      opacity:.22;
+    }
+    .address{margin:0; color:var(--muted)}
+
+    .page-title{font-size:64px; line-height:1; margin:18px 0 24px 0; font-weight:800;}
+
+    /* Minimalist social icons */
+    .socials{display:flex; gap:16px; align-items:center; padding:8px 0 22px 0}
+    .socials a{background:transparent !important; width:auto; height:auto; border-radius:0; box-shadow:none; padding:0; position:relative;}
+    .socials a:hover{transform:translateY(-2px)}
+    .ico{width:30px; height:30px}
+    .yt{color:#FF0000}
+    .sc{color:#FF7700}
+    .bc{color:#1DA0C3}
+    .socials a[title]{position:relative}
+    .socials a[title]::after{
+      content:attr(title);
+      position:absolute;
+      bottom:-30px;
+      left:50%;
+      transform:translateX(-50%);
+      background:rgba(0,0,0,0.8);
+      color:#fff;
+      font-size:12px;
+      padding:4px 8px;
+      border-radius:4px;
+      white-space:nowrap;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .2s ease;
+    }
+    .socials a:hover::after{opacity:1}
+
+    @media (max-width:640px){
+      .socials{justify-content:center}
     }
 
-    header{
+    .thumbnail-container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:40px 24px;
       display:flex;
+      justify-content:center;
+    }
+    .thumbnail{
+      position:relative;
+      display:block;
+      width:100%;
+      max-width:720px;
+      aspect-ratio:16/9;
+      border:2px solid #333;
+      border-radius:8px;
+      overflow:hidden;
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .thumbnail:hover{
+      transform:scale(1.02);
+      box-shadow:0 6px 28px rgba(0,0,0,0.6);
+    }
+    .thumbnail img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .play-button {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:90px;
+      height:90px;
+      background:rgba(0,0,0,0.6);
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
       align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom: 28px;
+      transition:background 0.3s ease, transform 0.3s ease;
+    }
+    .play-button::before {
+      content: "";
+      display:block;
+      width:0;
+      height:0;
+      border-left:30px solid white;
+      border-top:18px solid transparent;
+      border-bottom:18px solid transparent;
+      margin-left:8px;
+    }
+    .thumbnail:hover .play-button {
+      background:rgba(255,0,0,0.8);
+      transform:translate(-50%, -50%) scale(1.1);
     }
 
-    .brand{
-      display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+    .body-text {
+      max-width:640px; 
+      margin:0 auto;
+      padding:16px 24px 72px 24px;
+      font-size:18px;
+      line-height:1.75;
+      color:#e6e6e6;
+      font-weight:300;
     }
-    .brand h1{
-      font-family: "Great Vibes", cursive;
-      font-weight: 400;
-      font-size: clamp(42px, 8vw, 72px);
-      line-height: 1;
-      margin: 0;
-      letter-spacing:.4px;
-      color: var(--accent);
+    .body-text p{margin:0 0 18px 0}
+    .hl{
+      background:linear-gradient(transparent 60%, rgba(255,155,190,.32) 60%);
+      padding:0 .04em;
     }
-    .brand .subtitle{
-      color: var(--muted);
-      font-weight: 400;
-      font-size: clamp(13px, 1.9vw, 16px);
-      letter-spacing:.2px;
+    .pull-quote{
+      margin:28px auto; 
+      padding:14px 16px; 
+      font-weight:800; 
+      letter-spacing:.02em;
+      line-height:1.35; 
+      background:rgba(255,255,255,.04);
+      border-left:6px solid #f0f0f0;
+      text-transform:none; 
+      max-width:640px;
     }
+    .pull-quote span.hl{background:linear-gradient(transparent 55%, rgba(255,200,120,.35) 55%)}
 
-    nav a{
-      text-decoration:none;
-      margin-left: 14px;
-      font-size: 14px;
-      color: var(--muted);
-      border:1px solid rgba(255,255,255,.08);
-      padding: 6px 10px;
-      border-radius: 999px;
+    /* About page theme inversion */
+    .about-section{
+      background:#ffffff;
+      color:#0a0a0a;
+      padding:80px 0;
     }
+    .about-section .about-wrap{background:#ffffff;}
+    .about-section h2{color:#000000;}
+    .about-section .about-body{color:#1a1a1a;}
 
-    .hero{
-      margin: 8px 0 22px;
-    }
-    .hero p{
-      margin: 8px 0 0;
-      color: var(--muted);
-      max-width: 56ch;
-      line-height:1.6;
-    }
+    .about-wrap{max-width:760px; margin:0 auto; padding:24px 24px 80px 24px}
+    .about-wrap h2{margin:12px 0 16px 0; font-size:24px; font-weight:800; letter-spacing:.01em}
+    .about-body{font-family: Georgia, "Times New Roman", Times, serif; font-size:18px; line-height:1.8; font-weight:400}
+    .about-body p{margin:0 0 18px 0}
 
-    /* Notification banner */
-    .update-note{
-      margin: 16px 0 22px;
-      padding: .8rem 1rem;
-      border: 1px dashed rgba(255,255,255,.45);
-      background: rgba(255,255,255,.04);
-      border-radius: 10px;
-      font-size: .98rem;
-      letter-spacing:.2px;
+    @media (max-width: 860px){
+      :root{ --sidebar-w: 120px }
+      .page-title{font-size:42px}
+      .name{font-size:22px}
     }
-    .update-note strong{ font-weight:600; }
+    @media (max-width: 640px){
+      .layout{flex-direction:column}
+      .sidebar{position:relative; height:auto; width:100%; border-right:none; border-bottom:1px solid #2a2a2a;}
+      .nav{flex-direction:row; flex-wrap:wrap; gap:16px}
+    }
+      /* Articles list */
+    .articles-wrap{max-width:860px;margin:0 auto;padding:24px 24px 96px 24px}
+    .articles-head{display:flex;align-items:center;gap:10px;margin:8px 0 20px 0}
+    .pin{display:inline-flex;align-items:center;gap:6px;background:#ffd166;color:#111;font-weight:800;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.02em}
+    .article-card{display:flex;flex-direction:column;gap:6px;padding:14px 14px;border:1px solid #2a2a2a;border-radius:10px;background:rgba(255,255,255,.02)}
+    .article-card a{font-weight:700;text-decoration:none}
+    .meta{color:#bdbdbd;font-size:13px}
+    .articles-list{display:grid;grid-template-columns:1fr;gap:14px}
+    .archive-link{margin-top:16px}
 
-    /* Responsive video */
-    .video{
-      margin: 8px 0 28px;
-    }
-    .video .frame{
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: 0 10px 30px rgba(0,0,0,.4);
-    }
-    .video iframe{
-      position:absolute; inset:0;
-      width:100%; height:100%;
-      border:0;
-    }
+    /* Light theme inside about-section doesn't affect articles; keep dark. */
 
-    .links{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin: 6px 0 40px;
-    }
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      text-decoration:none;
-      font-size:14px;
-      color: var(--fg);
-      background: rgba(255,255,255,.03);
-    }
-
-    footer{
-      margin-top:40px;
-      padding-top:18px;
-      border-top:1px solid rgba(255,255,255,.08);
-      color: var(--muted);
-      font-size: 14px;
-      display:flex; flex-wrap:wrap; gap:16px;
-      justify-content:space-between; align-items:flex-start;
-    }
-    .addr { white-space: pre-line; }
-  </style>
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <h1>Gente Extraña</h1>
-        <span class="subtitle">by Endora</span>
-      </div>
-      <nav aria-label="primary">
-        <a href="#video">Video</a>
-        <a href="#listen">Listen</a>
-        <a href="#contact">Contact</a>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Menu</div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#coming-soon">Coming Soon</a>
+        <a href="#articles">Articles</a>
       </nav>
-    </header>
+    </aside>
 
-    <main>
-      <section class="hero">
-        <p>
-          A moody, boardwalk-meets-funhouse alt-Latin project, stitched from memory and motion. This is the home for the single, visuals, and release notes.
-        </p>
-      </section>
+    <div class="content" id="home">
+      <header class="header">
+        <div class="name-block">
+          <h1 class="name">Endora Marie McNeary</h1>
+          <p class="address">PO Box</p>
+          <p class="address">Danbury, CT</p>
+        </div>
+        <div>
+          <div class="page-title">Gente Extraña</div>
+        </div>
+        <div class="socials" aria-label="Music links">
+          <a href="https://www.youtube.com/@jefachica" class="yt" title="YouTube" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg class="ico" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M23.498 6.186a2.97 2.97 0 0 0-2.09-2.103C19.665 3.5 12 3.5 12 3.5s-7.665 0-9.408.583a2.97 2.97 0 0 0-2.09 2.103C0 7.937 0 12.01 0 12.01s0 4.072.502 5.823a2.97 2.97 0 0 0 2.09 2.103c1.743.583 9.408.583 9.408.583s7.665 0 9.408-.583a2.97 2.97 0 0 0 2.09-2.103C24 16.082 24 12.01 24 12.01s0-4.073-.502-5.824zM9.545 15.568V8.454l6.545 3.558-6.545 3.556z"/></svg>
+          </a>
+          <a href="https://soundcloud.com/jefachica" class="sc" title="SoundCloud" target="_blank" rel="noopener" aria-label="SoundCloud">
+            <svg class="ico" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.212 8.162a4.726 4.726 0 0 0-2.4.635 6.2 6.2 0 0 0-6.674 0 4.732 4.732 0 0 0-2.4-.635C2.384 8.162 0 10.527 0 13.408S2.384 18.654 5.738 18.654c1.91 0 3.6-1.047 4.558-2.601a6.178 6.178 0 0 0 6.674 0c.958 1.554 2.648 2.6 4.558 2.6 3.354 0 5.738-2.366 5.738-5.246 0-2.881-2.384-5.246-5.738-5.246z"/></svg>
+          </a>
+          <a href="https://jefachica.bandcamp.com/?from=viewsite_dashboard" class="bc" title="Bandcamp" target="_blank" rel="noopener" aria-label="Bandcamp">
+            <svg class="ico" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M0 3.54v16.92h24V3.54H0zm9.203 2.807h5.738l-4.144 11.306H5.059l4.144-11.306z"/></svg>
+          </a>
+        </div>
+      </header>
 
-      <!-- Notification banner -->
-      <div class="update-note" role="status" aria-live="polite">
-        ✨ <strong>Heads up:</strong> a <strong>new mix</strong> & the <strong>official music video</strong> will replace this demo soon. Stay tuned. ✨
+      <div class="thumbnail-container">
+        <a class="thumbnail" href="https://youtu.be/ykK06AKzhLg?si=b7awTobTY_o6qnKs" target="_blank">
+          <img src="https://img.youtube.com/vi/ykK06AKzhLg/maxresdefault.jpg" alt="Gente Extraña YouTube Thumbnail">
+          <div class="play-button"></div>
+        </a>
       </div>
 
-      <!-- Video -->
-      <section id="video" class="video" aria-label="Featured video">
-        <div class="frame">
-          <!-- Replace YOUR_YOUTUBE_VIDEO_ID below -->
-          <iframe
-            src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID"
-            title="Gente Extraña — Official Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+      <div class="body-text">
+        <p>This project is a <span class="hl">celebration of strangeness</span> — of the beauty that lives inside a fragmented identity. My Spanglish Doors cover is about transforming what once felt disjointed, invisible, or out of place into something original and whole.</p>
+
+        <blockquote class="pull-quote">This work is a <span class="hl">dialogue with my younger self</span> — a manifesto for anyone who’s ever felt invisible, unfit, or too much.</blockquote>
+
+        <p>The Doors were one of the first bands my dad exposed me to, shaping my sense of sound and feeling, while my mother’s latinidad and the first-generation experience taught me depth, distance, and duality. I filmed the video at the Jersey Shore, a place he used to take me, grounding the work in memory and transformation.</p>
+
+        <p>The style of this cover reflects both sides of my inheritance: the rock and psychedelia that run through my father’s influence, and the cultural strangeness and emotional intensity I carry through my mother. Together, they form a dialogue with my younger self — the part of me that once felt invisible, unfit, or too much — and an offering to anyone who has ever felt the same.</p>
+
+        <p>By <span class="hl">blending languages, sounds, and memories</span>, I reclaim my originality. I embrace the contradictions. I honor the wounds and the wonders. And I transform the fragments of loss into something whole, sublime, and defiantly my own.</p>
+      </div>
+
+      <section class="about-section" id="about">
+        <div class="about-wrap">
+          <h2>About</h2>
+          <div class="about-body">
+            <p>My work lives at the intersection of sound, storytelling, and identity. I’m drawn to music that dissolves genre borders — where psychedelia meets reggaetón, where industrial pulses collide with folkloric rhythms, where rock, ambient, and club music braid into one voice. I build worlds from distortion and melody, blending warm analog textures with digital manipulation, field recordings with synthetic beats.</p>
+
+            <p>Outside of music, I write and work across journalism, creative direction, and visual storytelling. My background in writing informs how I approach sound — attentive to structure, pacing, and subtext — and helps me build cohesive narratives that stretch beyond a single track or performance. Whether I’m producing, performing, or publishing, my goal is always the same: to make work that is deeply felt, fiercely original, and defiantly human.</p>
+          </div>
         </div>
       </section>
 
-      <!-- Listen / Links -->
-      <section id="listen" class="links" aria-label="Listen & Follow">
-        <a class="chip" href="https://soundcloud.com/" target="_blank" rel="noopener">SoundCloud</a>
-        <a class="chip" href="https://bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a>
-        <a class="chip" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
-        <a class="chip" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-        <!-- Add/remove as you like -->
+      <!-- Articles (dark theme) -->
+      <section class="articles-wrap" id="articles">
+        <div class="articles-head">
+          <h2 style="margin:0">Articles</h2>
+          <span class="pin" title="Pinned to top">📌 Pinned</span>
+        </div>
+        <div class="article-card">
+          <a href="https://afropop.org/articles/tokischa-peralta-overcomes-backlash-with-her-whole-new-show" target="_blank" rel="noopener">Tokischa Peralta Overcomes Backlash With Attitude</a>
+          <div class="meta">Afropop Worldwide · Mar 8, 2023 · by Endora McNeary</div>
+          <p style="margin:6px 0 0 0;color:#dcdcdc">A feature on Tokischa’s rise, artistic controversy, and unapologetic vision.</p>
+        </div>
+
+        <div class="archive-link">
+          <p class="meta">Full archive:</p>
+          <a href="https://endoramcneary.journoportfolio.com/" target="_blank" rel="noopener">endoramcneary.journoportfolio.com →</a>
+        </div>
       </section>
 
-      <footer id="contact">
-        <div>© <span id="y"></span> Endora</div>
-        <div class="addr">
-          <!-- Update this with your actual mailing details -->
-          PO Box ___ • Danbury, CT 0____ • United States
-        </div>
-      </footer>
-    </main>
-  </div>
+      <footer>
+        © <span id
 
-  <script>
-    // auto-year
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+  
+
+
+
+ 
+  
+
+
+
+ 
+   
+
+
 
 
 

@@ -120,6 +120,12 @@
     .yt{color:#FF0000}
     .sc{color:#FF7700}
     .bc{color:#1DA0C3}
+
+    /* ✨ NEW: SoundCloud icon vertical correction */
+    .sc .ico {
+      transform: translateY(1px);
+    }
+
     .socials a[title]{position:relative}
     .socials a[title]::after{
       content:attr(title);
@@ -385,13 +391,19 @@
           <p class="address">Danbury, CT — PO Box 122</p>
         </div>
         <div class="page-title">Gente Extraña</div>
+
+        <!-- ⭐ UPDATED SOUNDCLOUD ICON -->
         <div class="socials" aria-label="Music links">
           <a href="https://www.youtube.com/@jefachica" class="yt" title="YouTube" target="_blank" rel="noopener" aria-label="YouTube">
             <svg class="ico" role="img" viewBox="0 0 24 24"><path fill="currentColor" d="M23.498 6.186a2.97 2.97 0 0 0-2.09-2.103C19.665 3.5 12 3.5 12 3.5s-7.665 0-9.408.583a2.97 2.97 0 0 0-2.09 2.103C0 7.937 0 12.01 0 12.01s0 4.072.502 5.823a2.97 2.97 0 0 0 2.09 2.103c1.743.583 9.408.583 9.408.583s7.665 0 9.408-.583a2.97 2.97 0 0 0 2.09-2.103C24 16.082 24 12.01 24 12.01s0-4.073-.502-5.824zM9.545 15.568V8.454l6.545 3.558-6.545 3.556z"/></svg>
           </a>
+
           <a href="https://soundcloud.com/jefachica" class="sc" title="SoundCloud" target="_blank" rel="noopener" aria-label="SoundCloud">
-            <svg class="ico" role="img" viewBox="0 0 24 24"><path fill="currentColor" d="M17.212 8.162a4.726 4.726 0 0 0-2.4.635 6.2 6.2 0 0 0-6.674 0 4.732 4.732 0 0 0-2.4-.635C2.384 8.162 0 10.527 0 13.408S2.384 18.654 5.738 18.654c1.91 0 3.6-1.047 4.558-2.601a6.178 6.178 0 0 0 6.674 0c.958 1.554 2.648 2.6 4.558 2.6 3.354 0 5.738-2.366 5.738-5.246 0-2.881-2.384-5.246-5.738-5.246z"/></svg>
+            <svg class="ico" role="img" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M17.5 10.2c-.4 0-.7.1-1 .2a3.8 3.8 0 0 0-3.8-3.7c-.6 0-1.2.1-1.7.4V17h6.5c2.2 0 3.9-1.7 3.9-3.8 0-2.1-1.7-3.8-3.9-3.8zM8 10.8c-.2-.2-.5-.3-.8-.3H7V17h1V10.8zm-2 1c-.2-.2-.5-.3-.8-.3H5V17h1v-5.2zm-2 1c-.2-.2-.4-.3-.7-.3-.6 0-1 .4-1 1 0 .6.4 1 1 1 .3 0 .5-.1 .7-.3V12.8z"/>
+            </svg>
           </a>
+
           <a href="https://jefachica.bandcamp.com/?from=viewsite_dashboard" class="bc" title="Bandcamp" target="_blank" rel="noopener" aria-label="Bandcamp">
             <svg class="ico" role="img" viewBox="0 0 24 24"><path fill="currentColor" d="M0 3.54v16.92h24V3.54H0zm9.203 2.807h5.738l-4.144 11.306H5.059l4.144-11.306z"/></svg>
           </a>
@@ -435,95 +447,8 @@
         </p>
 
         <p>
-          The style of this cover reflects both sides of my inheritance: the rock and psychedelia that run through my father’s influence, and the
-          cultural strangeness and emotional intensity I carry through my mother. Together, they form a dialogue with my younger self — the part of
-          me that once felt invisible, unfit, or too much — and an offering to anyone who has ever felt the same.
-        </p>
+          Th
 
-        <p>
-          By <span class="hl">blending languages, sounds, and memories</span>, I reclaim my originality. I embrace the contradictions. I honor
-          the wounds and the wonders. And I transform the fragments of loss into something whole, sublime, and defiantly my own.
-        </p>
-      </div>
-
-      <!-- About -->
-      <section class="about-section" id="about">
-        <div class="about-wrap">
-          <h2>About</h2>
-          <div class="about-body">
-            <p>
-              My work lives at the intersection of sound, storytelling, and identity. I’m drawn to music that dissolves genre borders — where psychedelia
-              meets reggaetón, where industrial pulses collide with folkloric rhythms, where rock, ambient, and club music braid into one voice.
-              I build worlds from distortion and melody, blending warm analog textures with digital manipulation, field recordings with synthetic beats.
-            </p>
-            <p>
-              Outside of music, I write and work across journalism, creative direction, and visual storytelling. My background in writing informs how I approach sound —
-              attentive to structure, pacing, and subtext — and helps me build cohesive narratives that stretch beyond a single track or performance.
-              Whether I’m producing, performing, or publishing, my goal is always the same: to make work that is deeply felt, fiercely original, and defiantly human.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Articles -->
-      <section class="articles-wrap" id="articles">
-        <div class="articles-head">
-          <h2 style="margin:0">Articles</h2>
-          <span class="pin" title="Pinned to top">📌 Pinned</span>
-        </div>
-
-        <div class="article-card">
-          <a href="https://afropop.org/articles/tokischa-peralta-overcomes-backlash-with-her-whole-new-show" target="_blank" rel="noopener">
-            Tokischa Peralta Overcomes Backlash With Attitude
-          </a>
-          <div class="meta">Afropop Worldwide · Mar 8, 2023 · by Endora McNeary</div>
-          <p style="margin:6px 0 0 0; color:#dcdcdc;">
-            A feature on Tokischa’s rise, artistic controversy, and unapologetic vision.
-          </p>
-        </div>
-
-        <div class="archive-link">
-          <p class="meta">Full archive:</p>
-          <a href="https://endoramcneary.journoportfolio.com/" target="_blank" rel="noopener">
-            endoramcneary.journoportfolio.com →
-          </a>
-        </div>
-      </section>
-
-      <footer style="max-width:var(--maxw); margin:0 auto; padding:24px; color:#bdbdbd; border-top:1px solid #2a2a2a;">
-        © <span id="year"></span> Endora McNeary
-      </footer>
-    </div>
-  </div>
-
-  <script>
-    // Dismissible MV notice
-    (function(){
-      try {
-        if (localStorage.getItem('mv_notice_dismissed') === '1') {
-          var n = document.getElementById('mv-notice');
-          if (n) n.remove();
-        } else {
-          var btn = document.getElementById('mv-close');
-          if (btn) {
-            btn.addEventListener('click', function(){
-              var n = document.getElementById('mv-notice');
-              if (n) n.remove();
-              localStorage.setItem('mv_notice_dismissed', '1');
-            });
-          }
-        }
-      } catch(e){}
-    })();
-
-    // Footer year
-    (function(){
-      var y = document.getElementById('year');
-      if (y) y.textContent = new Date().getFullYear();
-    })();
-  </script>
-</body>
-</html>
 
 
 

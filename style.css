@@ -392,6 +392,10 @@ footer {
    DESKTOP (≥900px)
    Checkerboard Sidebar + Manila Panel
    ========================================================= */
+/* =========================================================
+   DESKTOP (≥900px)
+   Checkerboard Sidebar + Manila Panel + Pink Tape
+   ========================================================= */
 @media (min-width: 900px) {
 
   .sidebar {
@@ -417,21 +421,29 @@ footer {
     margin: 0;
   }
 
-
   .brand,
   .nav a {
-    color: #000000;
+    color: #000;
   }
- 
-/* ──────────────────────────────────────────────── */
-/* 📌 Pink Tape Behind Name — Desktop Only          */
-/* ──────────────────────────────────────────────── */
+}
+
+/* =========================================================
+   PINK MASKING TAPE BEHIND NAME (Desktop Only)
+   ========================================================= */
+
 @media (min-width: 861px) {
+
+  /* Remove old grain highlight entirely */
+  .name::after {
+    display: none !important;
+    content: none !important;
+  }
+
   .name {
     position: relative;
     display: inline-block;
-    padding: 18px 26px; /* adds space so tape shows */
-    z-index: 2; /* keep text above tape */
+    padding: 18px 26px;
+    z-index: 2;
   }
 
   .name::before {
@@ -440,16 +452,11 @@ footer {
     inset: 0;
     z-index: -1;
     background-image: url("/assets/pink_tape.png");
-    background-size: 120% auto; /* slightly larger than text */
-    background-position: center;
+    background-size: 120% auto;
     background-repeat: no-repeat;
-    transform: rotate(-1.2deg); /* tiny tilt = authentic taped look */
+    background-position: center;
+    transform: rotate(-1.3deg);
+    opacity: 0.95;
     filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.12));
-    opacity: 0.92; /* soften so it blends naturally */
   }
 }
-
-  }
-
-
-

@@ -428,12 +428,11 @@ footer {
 }
 
 /* =========================================================
-   PINK MASKING TAPE BEHIND NAME (Desktop Only)
+   PINK MASKING TAPE BEHIND NAME (Desktop Only, No Tilt)
    ========================================================= */
-
 @media (min-width: 861px) {
 
-  /* Remove old grain highlight entirely */
+  /* Remove old grain overlay */
   .name::after {
     display: none !important;
     content: none !important;
@@ -449,14 +448,24 @@ footer {
   .name::before {
     content: "";
     position: absolute;
-    inset: 0;
+    left: 50%;
+    top: 50%;
+
+    /* Center perfectly with NO rotation */
+    transform: translate(-50%, -50%);
+
     z-index: -1;
-    background-image: url("/assets/pink_tape.png");
-    background-size: 120% auto;
+
+    /* Controls the tape size */
+    width: 135%;         /* wider than the name */
+    height: 75px;        /* adjust if needed */
+
+    background-image: url("/assets/pink_tape_cropped.png");
+    background-size: contain;     /* preserves torn edges */
     background-repeat: no-repeat;
     background-position: center;
-    transform: rotate(-1.3deg);
-    opacity: 0.95;
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.12));
+
+    opacity: 1;
+    pointer-events: none;
   }
 }

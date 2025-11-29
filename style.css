@@ -417,9 +417,38 @@ footer {
     margin: 0;
   }
 
+
   .brand,
   .nav a {
     color: #000000;
   }
+
 }
+/* -------------------------------------- */
+/*  DESKTOP: Scrapbook Pink Paper Behind Name */
+/* -------------------------------------- */
+
+@media (min-width: 860px) {
+  .name {
+    position: relative;
+    z-index: 2;
+    padding: 4px 6px;
+  }
+
+  .name::before {
+    content: "";
+    position: absolute;
+    inset: -10px -14px -6px -10px; /* top | right | bottom | left */
+    background: #ff8cbc; /* soft scrapbook pink */
+    border-radius: 6px;
+    transform: rotate(-2.2deg); /* slight imperfect tilt */
+    z-index: -1;
+
+    /* Subtle “paper” look */
+    box-shadow:
+      0 6px 12px rgba(0,0,0,0.15),
+      0 0 0 1px rgba(0,0,0,0.08);
+  }
+}
+
 

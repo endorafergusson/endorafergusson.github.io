@@ -435,20 +435,34 @@ footer {
     padding: 4px 6px;
   }
 
+ 
+  }
+}
+/* ──────────────────────────────────────────────── */
+/* 📌 Pink Tape Behind Name — Desktop Only          */
+/* ──────────────────────────────────────────────── */
+@media (min-width: 861px) {
+  .name {
+    position: relative;
+    display: inline-block;
+    padding: 18px 26px; /* adds space so tape shows */
+    z-index: 2; /* keep text above tape */
+  }
+
   .name::before {
     content: "";
     position: absolute;
-    inset: -10px -14px -6px -10px; /* top | right | bottom | left */
-    background: #ff8cbc; /* soft scrapbook pink */
-    border-radius: 6px;
-    transform: rotate(-2.2deg); /* slight imperfect tilt */
+    inset: 0;
     z-index: -1;
-
-    /* Subtle “paper” look */
-    box-shadow:
-      0 6px 12px rgba(0,0,0,0.15),
-      0 0 0 1px rgba(0,0,0,0.08);
+    background-image: url("/assets/pink_tape.png");
+    background-size: 120% auto; /* slightly larger than text */
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(-1.2deg); /* tiny tilt = authentic taped look */
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.12));
+    opacity: 0.92; /* soften so it blends naturally */
   }
 }
+
 
 

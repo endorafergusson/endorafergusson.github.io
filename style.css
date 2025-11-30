@@ -206,6 +206,114 @@ html, body {
   margin: 0 auto;
   padding: 16px 24px 80px;
   font-size: 18px;
-  line-height
+  line-height: 1.75;
+}
 
+.pull-quote {
+  margin: 32px 0;
+  padding: 14px 18px;
+  background: #f9f9f9;
+  border-left: 5px solid #000;
+  font-weight: 700;
+  line-height: 1.4;
+}
 
+/* ------------------------------------------------------------
+   ABOUT SECTION
+------------------------------------------------------------ */
+.about-section {
+  background: #fafafa;
+  padding: 70px 0;
+}
+
+.about-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.about-wrap h2 {
+  margin-top: 0;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.about-body {
+  font-family: Georgia, serif;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+/* ------------------------------------------------------------
+   ARTICLES
+------------------------------------------------------------ */
+.articles-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.article-card {
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 14px;
+  background: #fff;
+}
+
+.article-card a {
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.article-card a:hover {
+  text-decoration: underline;
+}
+
+.meta {
+  color: #777;
+  font-size: 13px;
+}
+
+/* ------------------------------------------------------------
+   FOOTER
+------------------------------------------------------------ */
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  border-top: 1px solid #eee;
+  color: #777;
+}
+
+/* ------------------------------------------------------------
+   MOBILE OVERRIDE (NO TAPE)
+------------------------------------------------------------ */
+@media (max-width: 800px) {
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    background: #fff; /* remove stripes on mobile */
+    padding: 16px;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .name-block {
+    padding-top: 0;
+  }
+
+  .name-block::before {
+    display: none !important; /* remove tape */
+  }
+
+  .name {
+    font-size: 32px;
+  }
+}

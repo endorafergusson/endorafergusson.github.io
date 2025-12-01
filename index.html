@@ -1,13 +1,369 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gente Extraña — Endora</title>
-  <meta name="description" content="Gente Extraña — homepage for Endora Marie McNeary" />
+@@ -8,368 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f0f0f;
+      --fg:#f0f0f0;
+      --muted:#bdbdbd;
+      --accent:#f5f5f5;
+      --link:#f0f0f0;
+      --sidebar-w: 180px;
+      --maxw: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.5;
+    }
+
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .layout{display:flex; min-height:100vh}
+
+    .sidebar{
+      position:sticky;
+      top:0;
+      align-self:flex-start;
+      height:100vh;
+      width:var(--sidebar-w);
+      padding:24px 16px;
+      border-right:1px solid #2a2a2a;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      letter-spacing:.2px;
+    }
+    .brand{
+      font-weight:800;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+    }
+    .nav{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:8px;
+    }
+    .nav a{font-weight:600}
+
+    .content{flex:1; min-width:0;}
+
+    .header{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:28px 24px 0 24px;
+      border-bottom:1px solid #2a2a2a;
+    }
+    .name-block{margin:0 0 18px 0;}
+    .name{
+      font-family:'Great Vibes', cursive;
+      font-size:28px;
+      line-height:1.1;
+      margin:0 0 8px 0;
+      letter-spacing:.5px;
+      position:relative;
+      display:inline-block;
+    }
+    .name::after{
+      content:"";
+      position:absolute;
+      inset:-6px -8px;
+      pointer-events:none;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='120'><filter id='noise'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23noise)'/></svg>");
+      background-size:cover;
+      mix-blend-mode:multiply;
+      opacity:.22;
+    }
+    .address{margin:0; color:var(--muted)}
+
+    .page-title{
+      font-size:64px;
+      line-height:1;
+      margin:18px 0 24px 0;
+      font-weight:800;
+    }
+
+    /* Socials */
+    .socials{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      padding:8px 0 22px 0;
+    }
+    .socials a{
+      background:transparent!important;
+      width:auto;
+      height:auto;
+      border-radius:0;
+      box-shadow:none;
+      padding:0;
+      position:relative;
+    }
+    .socials a:hover{transform:translateY(-2px)}
+    .ico{width:30px; height:30px}
+    .yt{color:#FF0000}
+    .sc{color:#FF7700}
+    .bc{color:#1DA0C3}
+
+    /* ✨ NEW: SoundCloud icon vertical correction */
+    .sc .ico {
+      transform: translateY(1px);
+    }
+
+    .socials a[title]{position:relative}
+    .socials a[title]::after{
+      content:attr(title);
+      position:absolute;
+      bottom:-30px;
+      left:50%;
+      transform:translateX(-50%);
+      background:rgba(0,0,0,0.8);
+      color:#fff;
+      font-size:12px;
+      padding:4px 8px;
+      border-radius:4px;
+      white-space:nowrap;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .2s ease;
+    }
+    .socials a:hover::after{opacity:1}
+
+    @media (max-width:640px){
+      .socials{justify-content:center}
+    }
+
+    /* Thumbnail / video */
+    .thumbnail-container{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:40px 24px;
+      display:flex;
+      justify-content:center;
+    }
+    .thumbnail{
+      position:relative;
+      display:block;
+      width:100%;
+      max-width:720px;
+      aspect-ratio:16/9;
+      border:2px solid #333;
+      border-radius:8px;
+      overflow:hidden;
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .thumbnail:hover{
+      transform:scale(1.02);
+      box-shadow:0 6px 28px rgba(0,0,0,0.6);
+    }
+    .thumbnail img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .play-button{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:90px;
+      height:90px;
+      background:rgba(0,0,0,0.6);
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      transition:background 0.3s ease, transform 0.3s ease;
+    }
+    .play-button::before{
+      content:"";
+      display:block;
+      width:0;
+      height:0;
+      border-left:30px solid #ffffff;
+      border-top:18px solid transparent;
+      border-bottom:18px solid transparent;
+      margin-left:8px;
+    }
+    .thumbnail:hover .play-button{
+      background:rgba(255,0,0,0.8);
+      transform:translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Body text */
+    .body-text{
+      max-width:640px;
+      margin:0 auto;
+      padding:16px 24px 72px 24px;
+      font-size:18px;
+      line-height:1.75;
+      color:#e6e6e6;
+      font-weight:300;
+    }
+    .body-text p{margin:0 0 18px 0}
+    .hl{
+      background:linear-gradient(transparent 60%, rgba(255,155,190,.32) 60%);
+      padding:0 .04em;
+    }
+    .pull-quote{
+      margin:28px auto;
+      padding:14px 16px;
+      font-weight:800;
+      letter-spacing:.02em;
+      line-height:1.35;
+      background:rgba(255,255,255,.04);
+      border-left:6px solid #f0f0f0;
+      max-width:640px;
+    }
+    .pull-quote span.hl{
+      background:linear-gradient(transparent 55%, rgba(255,200,120,.35) 55%);
+    }
+
+    /* About section (light) */
+    .about-section{
+      background:#ffffff;
+      color:#0a0a0a;
+      padding:80px 0;
+    }
+    .about-wrap{
+      max-width:760px;
+      margin:0 auto;
+      padding:24px 24px 80px 24px;
+    }
+    .about-wrap h2{
+      margin:12px 0 16px 0;
+      font-size:24px;
+      font-weight:800;
+      letter-spacing:.01em;
+    }
+    .about-body{
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size:18px;
+      line-height:1.8;
+      font-weight:400;
+      color:#1a1a1a;
+    }
+    .about-body p{margin:0 0 18px 0}
+
+    /* Articles */
+    .articles-wrap{
+      max-width:860px;
+      margin:0 auto;
+      padding:24px 24px 96px 24px;
+    }
+    .articles-head{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:8px 0 20px 0;
+    }
+    .pin{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:#ffd166;
+      color:#111;
+      font-weight:800;
+      border-radius:999px;
+      padding:4px 10px;
+      font-size:12px;
+      letter-spacing:.02em;
+    }
+    .article-card{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      padding:14px 14px;
+      border:1px solid #2a2a2a;
+      border-radius:10px;
+      background:rgba(255,255,255,.02);
+    }
+    .article-card a{
+      font-weight:700;
+      text-decoration:none;
+    }
+    .meta{
+      color:#bdbdbd;
+      font-size:13px;
+    }
+    .archive-link{margin-top:16px}
+
+    /* Music-video notice */
+    .mv-notice{
+      background:var(--bg,#111);
+      color:var(--fg,#f0f0f0);
+      border:1px solid rgba(255,255,255,.15);
+      padding:12px 16px;
+      display:flex;
+      align-items:start;
+      gap:12px;
+      border-radius:12px;
+      margin:12px 0 18px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    .mv-badge{
+      font:700 12px/1 Inter,system-ui,sans-serif;
+      padding:3px 8px;
+      border:1px solid currentColor;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .mv-text{
+      margin:0;
+      font-size:14px;
+      line-height:1.35;
+    }
+    .mv-text a{
+      color:var(--link,#f0f0f0);
+      text-decoration:underline;
+    }
+    .mv-close{
+      margin-left:auto;
+      border:0;
+      background:transparent;
+      color:inherit;
+      font-size:18px;
+      cursor:pointer;
+      line-height:1;
+      padding:2px 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      :root{ --sidebar-w: 120px }
+      .page-title{font-size:42px}
+      .name{font-size:22px}
+    }
+    @media (max-width: 640px){
+      .layout{flex-direction:column}
+      .sidebar{
+        position:relative;
+        height:auto;
+        width:100%;
+        border-right:none;
+        border-bottom:1px solid #2a2a2a;
+      }
+      .nav{
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:16px
+      }
+    }
+  </style>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,80 +374,6 @@
 </head>
 <body>
   <div class="layout">
-    <aside class="sidebar">
-      <div class="brand">Menu</div>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#coming-soon">Coming Soon</a>
-        <a href="#articles">Articles</a>
-      </nav>
-    </aside>
-
-    <div class="content" id="home">
-      <header class="header">
-        <div class="name-block">
-          <h1 class="name">Endora Marie McNeary</h1>
-          <p class="address">PO Box 122</p>
-          <p class="address">Danbury, CT 06810</p>
-        </div>
-        <div class="page-title">Gente Extraña</div>
-
-        <!-- ⭐ UPDATED SOUNDCLOUD ICON -->
-        <div class="socials" aria-label="Music links">
-          <a href="https://www.youtube.com/@jefachica" class="yt" title="YouTube" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg class="ico" role="img" viewBox="0 0 24 24"><path fill="currentColor" d="M23.498 6.186a2.97 2.97 0 0 0-2.09-2.103C19.665 3.5 12 3.5 12 3.5s-7.665 0-9.408.583a2.97 2.97 0 0 0-2.09 2.103C0 7.937 0 12.01 0 12.01s0 4.072.502 5.823a2.97 2.97 0 0 0 2.09 2.103c1.743.583 9.408.583 9.408.583s7.665 0 9.408-.583a2.97 2.97 0 0 0 2.09-2.103C24 16.082 24 12.01 24 12.01s0-4.073-.502-5.824zM9.545 15.568V8.454l6.545 3.558-6.545 3.556z"/></svg>
-          </a>
-
-          <a href="https://soundcloud.com/jefachica" class="sc" title="SoundCloud" target="_blank" rel="noopener" aria-label="SoundCloud">
-            <svg class="ico" role="img" viewBox="0 0 50 23" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
-              <path d="M49.139 15.466a6.88 6.88 0 01-6.966 6.495H25.429a1.404 1.404 0 01-1.39-1.396V2.536a1.536 1.536 0 01.925-1.468S26.504 0 29.748 0a10.973 10.973 0 015.63 1.547 11.14 11.14 0 015.242 7.26 6.465 6.465 0 011.776-.242 6.703 6.703 0 016.744 6.901h-.001zm-27.19-11.79c.505 6.115.872 11.692 0 17.787a.544.544 0 01-1.081 0c-.813-6.043-.46-11.725 0-17.787a.542.542 0 01.83-.52c.176.11.274.313.25.52zM18.56 21.469a.569.569 0 01-1.127 0 67.976 67.976 0 010-15.695.57.57 0 011.134 0c.673 5.21.67 10.485-.007 15.695zM15.166 5.243c.55 5.603.8 10.623-.006 16.213a.545.545 0 01-1.088 0c-.78-5.518-.518-10.682 0-16.213.03-.28.266-.49.547-.49.28 0 .517.21.547.49zm-3.4 16.233a.559.559 0 01-1.108 0 57.407 57.407 0 010-14.654.563.563 0 111.127 0 53.55 53.55 0 01-.02 14.654zM8.37 10.486c.859 3.8.472 7.156-.032 11.029a.532.532 0 01-1.05 0c-.458-3.82-.838-7.255-.032-11.03a.558.558 0 011.114.001zm-3.388-.577c.787 3.893.53 7.189-.02 11.095-.065.577-1.054.583-1.107 0-.498-3.847-.734-7.242-.02-11.095a.578.578 0 011.147 0zm-3.42 1.887c.825 2.582.543 4.68-.033 7.327a.537.537 0 01-1.07 0c-.497-2.595-.7-4.738-.044-7.327a.575.575 0 011.146 0z" fill="#f50"/>
-            </svg>
-          </a>
-
-          <a href="https://jefachica.bandcamp.com/?from=viewsite_dashboard" class="bc" title="Bandcamp" target="_blank" rel="noopener" aria-label="Bandcamp">
-            <svg class="ico" role="img" viewBox="0 0 24 24"><path fill="currentColor" d="M0 3.54v16.92h24V3.54H0zm9.203 2.807h5.738l-4.144 11.306H5.059l4.144-11.306z"/></svg>
-          </a>
-        </div>
-      </header>
-
-      <!-- Music-video notice -->
-      <div id="mv-notice" class="mv-notice">
-        <span class="mv-badge">Update</span>
-        <p class="mv-text">
-          A <strong>new full mix + official music video</strong> is dropping soon.
-          The current demo will be replaced. Watch the demo below or
-          <a href="#video">jump to it</a>.
-        </p>
-        <button id="mv-close" class="mv-close" aria-label="Dismiss notice">×</button>
-      </div>
-
-      <!-- Video thumbnail -->
-      <div class="thumbnail-container" id="video">
-        <a class="thumbnail" href="https://youtu.be/ykK06AKzhLg?si=b7awTobTY_o6qnKs" target="_blank" rel="noopener">
-          <img src="https://img.youtube.com/vi/ykK06AKzhLg/maxresdefault.jpg" alt="Gente Extraña YouTube Thumbnail">
-          <div class="play-button"></div>
-        </a>
-      </div>
-
-      <!-- Full body text -->
-      <div class="body-text">
-        <p>
-          This project is a <span class="hl">celebration of strangeness</span> — of the beauty that lives inside a fragmented identity.
-          My Spanglish Doors cover is about transforming what once felt disjointed, invisible, or out of place into something original and whole.
-        </p>
-
-        <blockquote class="pull-quote">
-          This work is a <span class="hl">dialogue with my younger self</span> — a manifesto for anyone who’s ever felt invisible, unfit, or too much.
-        </blockquote>
-
-        <p>
-          The Doors were one of the first bands my dad exposed me to, shaping my sense of sound and feeling, while my mother’s latinidad and the
-          first-generation experience taught me depth, distance, and duality. I filmed the video at the Jersey Shore, a place he used to take me,
-          grounding the work in memory and transformation.
-        </p>
-
-
 
 
 

@@ -119,60 +119,47 @@ a:hover {
   font-weight: 800;
 }
 
-/* =========================================================
+/* ------------------------------------------------------------
    SOCIAL ICONS
-   ========================================================= */
+------------------------------------------------------------ */
 .socials {
   display: flex;
-  gap: 16px;
+  gap: 18px;
+  margin: 18px 0 6px;
   align-items: center;
-  padding: 8px 0 22px 0;
 }
 
 .socials a {
-  background: transparent!important;
-  width: auto;
-  height: auto;
-  padding: 0;
-  position: relative;
-  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.socials a:hover { transform: translateY(-2px); }
-
-.ico {
-  width: 30px;
-  height: 30px;
+.socials .ico {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* Ensure SoundCloud SVG inherits the orange color */
-.sc .ico path {
-  fill: currentColor !important;
+/* Brand colors restored */
+.yt .ico {
+  color: #FF0000 !important;       /* YouTube red */
 }
 
-/* Colors */
-.yt { color: #FF0000; }
-.sc { color: #FF7700; }
-.bc { color: #1DA0C3; }
-
-/* Tooltip */
-.socials a[title]::after {
-  content: attr(title);
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity .2s;
-  pointer-events: none;
+.sc .ico {
+  color: #FF7700 !important;       /* SoundCloud orange */
 }
-.socials a:hover::after { opacity: 1; }
+
+.bc .ico {
+  color: #1DA0C3 !important;       /* Bandcamp teal */
+}
+
+/* Hover effect — OPTION B (recommended)
+   brighten + float upward */
+.socials a:hover .ico {
+  filter: brightness(1.35);
+  transform: translateY(-4px);
+}
 
 /* =========================================================
    VIDEO THUMBNAIL

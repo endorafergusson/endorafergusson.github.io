@@ -66,21 +66,10 @@
         </div>
       </header>
 
-      <!-- MV NOTICE -->
-      <div id="mv-notice" class="mv-notice">
-        <span class="mv-badge">Update</span>
-        <p class="mv-text">
-          A <strong>new full mix + official music video</strong> is dropping soon.
-          The current demo will be replaced. Watch the demo below or
-          <a href="#video">jump to it</a>.
-        </p>
-        <button id="mv-close" class="mv-close" aria-label="Dismiss notice">×</button>
-      </div>
-
       <!-- VIDEO THUMBNAIL -->
       <div class="thumbnail-container" id="video">
-        <a class="thumbnail" href="https://youtu.be/ykK06AKzhLg?si=b7awTobTY_o6qnKs" target="_blank" rel="noopener">
-          <img src="https://img.youtube.com/vi/ykK06AKzhLg/maxresdefault.jpg" alt="Gente Extraña YouTube Thumbnail">
+        <a class="thumbnail" href="https://youtu.be/3b1kJX5bN0I?si=vNbArPwzFglpZPs3" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/3b1kJX5bN0I/maxresdefault.jpg" alt="Gente Extraña YouTube Thumbnail">
           <div class="play-button"></div>
         </a>
       </div>
@@ -183,81 +172,12 @@
 
   <!-- SCRIPTS -->
   <script>
-    // MV notice dismissal
-    (function(){
-      try {
-        if (localStorage.getItem('mv_notice_dismissed') === '1') {
-          var n = document.getElementById('mv-notice');
-          if (n) n.remove();
-        } else {
-          var btn = document.getElementById('mv-close');
-          if (btn) {
-            btn.addEventListener('click', function(){
-              var n = document.getElementById('mv-notice');
-              if (n) n.remove();
-              localStorage.setItem('mv_notice_dismissed', '1');
-            });
-          }
-        }
-      } catch(e){}
-    })();
-
     // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-      
-  
-
-
-
- 
-  
-
-
-
- 
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       
       
   

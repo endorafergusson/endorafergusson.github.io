@@ -367,13 +367,7 @@ p { line-height: 1.6; }
   background: #fafafa;
   border: 1px solid #ccc;
   border-radius: 10px;
-}
-.article-image {
-  width: 120px;
-  height: auto;
-  display: block;
-  margin-bottom: 10px;
-  border-radius: 6px;
+
 }
 .article-card a {
   font-weight: 700;

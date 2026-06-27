@@ -482,13 +482,13 @@ footer {
     padding: 0 24px 48px;
   }
 
- .mobile-logo {
+.mobile-logo {
   display: block;
-  width: 135vw;
-  max-width: none;
+  width: 100%;
+  max-width: 760px;
   height: auto;
-  margin: 18px 0 34px;
-  transform: translateX(-17vw);
+  margin: 28px auto 36px;
+}
 }
   }
 

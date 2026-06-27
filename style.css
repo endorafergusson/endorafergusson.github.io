@@ -469,29 +469,19 @@ footer {
 }
 
 @media (max-width: 899px) {
-
-  body {
-    background: #ffffff;
-    color: #000;
-  }
-
-  /* Hide the desktop website */
   .layout {
-    display: none;
+    display: none !important;
   }
 
-  /* Mobile homepage */
   .mobile-hub {
-    display: flex;
+    display: flex !important;
     min-height: 100vh;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     background: #ffffff;
     padding: 0 24px 48px;
   }
 
-  /* Logo */
   .mobile-logo {
     display: block;
     width: min(95vw, 760px);
@@ -499,18 +489,15 @@ footer {
     margin: 28px auto 36px;
   }
 
-  /* Tagline */
   .mobile-tagline {
     margin: 0 0 34px;
     font-size: 13px;
-    font-weight: 400;
     letter-spacing: .05em;
     color: #666;
     text-transform: none;
     text-align: center;
   }
 
-  /* Links */
   .mobile-links {
     width: 100%;
     max-width: 420px;
@@ -521,7 +508,6 @@ footer {
 
   .mobile-links a {
     display: block;
-    width: 100%;
     padding: 18px 20px;
     border: 1.5px solid #000;
     border-radius: 999px;
@@ -532,16 +518,6 @@ footer {
     font-weight: 600;
     letter-spacing: .03em;
     text-decoration: none;
-    transition: .18s ease;
-  }
-
-  .mobile-links a:hover {
-    background: #000;
-    color: #fff;
-  }
-
-  .mobile-links a:active {
-    transform: scale(.98);
   }
 }
-
+  

@@ -460,6 +460,78 @@ footer {
   margin: 2rem auto;
 }
 
+/* =========================================================
+   MOBILE LINK HUB
+   ========================================================= */
+
+.mobile-hub {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .layout {
+    display: none;
+  }
+
+  .mobile-hub {
+    display: flex;
+    min-height: 100vh;
+    padding: 0 22px 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #ffffff;
+  }
+
+  .mobile-logo {
+    width: calc(100% + 44px);
+    max-width: none;
+    margin: 0 -22px 34px;
+    display: block;
+  }
+
+  .mobile-tagline {
+    margin: 0 0 28px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  .mobile-links {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .mobile-links a {
+    display: block;
+    width: 100%;
+    padding: 17px 20px;
+    border: 1.5px solid #000;
+    border-radius: 999px;
+    color: #000;
+    background: #fff;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .mobile-links a:active {
+    background: #000;
+    color: #fff;
+  }
+}
+
 
 
 

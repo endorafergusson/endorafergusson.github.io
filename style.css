@@ -1,117 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Endora McNeary</title>
-  <meta name="description" content="Music, video, and writing by Endora McNeary" />
+* {
+  box-sizing: border-box;
+}
 
-  <link rel="stylesheet" href="style.css">
-</head>
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
 
-<body>
-  <main class="site">
+.site-header {
+  text-align: center;
+  padding: 42px 20px 28px;
+}
 
-    <!-- TOP LOGO -->
-    <header class="top">
-      <img class="logo" src="soundcloudbanner2.jpg" alt="Jefachica logo">
+.logo {
+  display: block;
+  width: 320px;
+  max-width: 85vw;
+  margin: 0 auto 22px;
+}
 
-      <nav class="links" aria-label="Main links">
-        <a href="https://www.youtube.com/@jefachica" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://soundcloud.com/jefachica" target="_blank" rel="noopener">SoundCloud</a>
-        <a href="https://jefachica.bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a>
-      </nav>
-    </header>
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+  flex-wrap: wrap;
+}
 
-    <!-- INTRO -->
-    <section class="intro">
-      <h1>Endora Marie McNeary</h1>
-      <p>music / video / experiments</p>
-    </section>
+.main-nav a,
+a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
-    <!-- VIDEO -->
-    <section class="video-section">
-      <a class="thumbnail" href="https://youtu.be/3b1kJX5bN0I?si=vNbArPwzFglpZPs3" target="_blank" rel="noopener">
-        <img src="https://img.youtube.com/vi/3b1kJX5bN0I/hqdefault.jpg" alt="Gente Extraña YouTube thumbnail">
-        <span class="play-button"></span>
-      </a>
-    </section>
+.main-nav a {
+  text-decoration: none;
+  font-size: 16px;
+}
 
-    <!-- SPOTIFY -->
-    <section class="spotify-section">
-      <iframe
-        style="border-radius:12px"
-        src="https://open.spotify.com/embed/album/4BAhQwdrv5crlCOmoBkChL?utm_source=generator"
-        width="100%"
-        height="352"
-        frameborder="0"
-        allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
-    </section>
+.main-nav a:hover,
+a:hover {
+  text-decoration: underline;
+}
 
-    <!-- PROJECT TEXT -->
-    <section class="text-section">
-      <p>
-        This project is a celebration of strangeness — of the beauty that lives inside a fragmented identity.
-        My Spanglish Doors cover is about transforming what once felt disjointed, invisible, or out of place
-        into something original and whole.
-      </p>
+hr {
+  border: none;
+  border-top: 1px solid #cfcfcf;
+  width: min(94%, 1400px);
+  margin: 0 auto 55px;
+}
 
-      <p>
-        The Doors were one of the first bands my dad exposed me to, shaping my sense of sound and feeling,
-        while my mother’s latinidad and the first-generation experience taught me depth, distance, and duality.
-      </p>
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
 
-      <p>
-        By blending languages, sounds, and memories, I reclaim my originality. I embrace the contradictions.
-        I honor the wounds and the wonders.
-      </p>
-    </section>
+h1 {
+  font-size: 32px;
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
 
-    <!-- ABOUT -->
-    <section class="about-section">
-      <h2>About</h2>
+h2 {
+  font-size: 26px;
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
 
-      <p>
-        My work lives where memory distorts into sound. Influenced by latinidad, psychedelia, and industrial noise,
-        I build from fragments — rhythm, language, emotion — shaping worlds that feel intimate, uncanny, and alive.
-      </p>
+.subtitle {
+  font-size: 17px;
+  margin: 0 0 22px;
+}
 
-      <p>
-        I’m drawn to the spaces between genres: where distortion softens into melody, where ritual becomes rhythm,
-        and where identity cracks open into something new.
-      </p>
-    </section>
+.video-section,
+.spotify-section {
+  margin-bottom: 28px;
+}
 
-    <!-- ARTICLES -->
-    <section class="articles-section">
-      <h2>Articles</h2>
+.video-section img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid #d7d7d7;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
 
-      <article class="article-card">
-        <a href="https://afropop.org/articles/tokischa-peralta-overcomes-backlash-with-her-whole-new-show" target="_blank" rel="noopener">
-          Tokischa Peralta Overcomes Backlash With Attitude
-        </a>
-        <p>Afropop Worldwide · Mar 8, 2023 · by Endora McNeary</p>
-      </article>
+.spotify-section iframe {
+  display: block;
+}
 
-      <p>
-        <a href="https://endoramcneary.journoportfolio.com/" target="_blank" rel="noopener">
-          Full archive →
-        </a>
-      </p>
-    </section>
+.about {
+  margin-top: 52px;
+}
 
-    <footer>
-      © <span id="year"></span> Endora McNeary
-    </footer>
+.about p,
+.article p {
+  font-size: 16px;
+  margin: 0 0 22px;
+}
 
-  </main>
+.article a {
+  font-weight: 600;
+}
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+.meta {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+footer {
+  width: min(94%, 1400px);
+  margin: 80px auto 36px;
+  padding-top: 28px;
+  border-top: 1px solid #cfcfcf;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    padding-top: 34px;
+  }
+
+  .logo {
+    width: 240px;
+  }
+
+  .main-nav {
+    gap: 24px;
+  }
+
+  hr {
+    margin-bottom: 38px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .about {
+    margin-top: 42px;
+  }
+}
   

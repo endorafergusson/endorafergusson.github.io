@@ -1,117 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Endora McNeary</title>
-  <meta name="description" content="Music, video, and writing by Endora McNeary" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="style.css">
+<title>Endora McNeary</title>
+<meta name="description" content="Music, video and writing by Endora McNeary">
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <main class="site">
 
-    <!-- TOP LOGO -->
-    <header class="top">
-      <img class="logo" src="soundcloudbanner2.jpg" alt="Jefachica logo">
+<header class="site-header">
 
-      <nav class="links" aria-label="Main links">
-        <a href="https://www.youtube.com/@jefachica" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://soundcloud.com/jefachica" target="_blank" rel="noopener">SoundCloud</a>
-        <a href="https://jefachica.bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a>
-      </nav>
-    </header>
+    <img
+        src="soundcloudbanner2.jpg"
+        alt="Jefachica"
+        class="logo">
 
-    <!-- INTRO -->
-    <section class="intro">
-      <h1>Endora Marie McNeary</h1>
-      <p>music / video / experiments</p>
-    </section>
+    <nav class="main-nav">
+        <a href="https://www.youtube.com/@jefachica" target="_blank">YouTube</a>
+        <a href="https://soundcloud.com/jefachica" target="_blank">SoundCloud</a>
+        <a href="https://jefachica.bandcamp.com/" target="_blank">Bandcamp</a>
+    </nav>
 
-    <!-- VIDEO -->
-    <section class="video-section">
-      <a class="thumbnail" href="https://youtu.be/3b1kJX5bN0I?si=vNbArPwzFglpZPs3" target="_blank" rel="noopener">
-        <img src="https://img.youtube.com/vi/3b1kJX5bN0I/hqdefault.jpg" alt="Gente Extraña YouTube thumbnail">
-        <span class="play-button"></span>
-      </a>
-    </section>
+</header>
 
-    <!-- SPOTIFY -->
-    <section class="spotify-section">
-      <iframe
-        style="border-radius:12px"
-        src="https://open.spotify.com/embed/album/4BAhQwdrv5crlCOmoBkChL?utm_source=generator"
-        width="100%"
-        height="352"
-        frameborder="0"
-        allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
-    </section>
+<hr>
 
-    <!-- PROJECT TEXT -->
-    <section class="text-section">
-      <p>
-        This project is a celebration of strangeness — of the beauty that lives inside a fragmented identity.
-        My Spanglish Doors cover is about transforming what once felt disjointed, invisible, or out of place
-        into something original and whole.
-      </p>
+<main class="container">
 
-      <p>
-        The Doors were one of the first bands my dad exposed me to, shaping my sense of sound and feeling,
-        while my mother’s latinidad and the first-generation experience taught me depth, distance, and duality.
-      </p>
+<div class="left-column">
 
-      <p>
-        By blending languages, sounds, and memories, I reclaim my originality. I embrace the contradictions.
-        I honor the wounds and the wonders.
-      </p>
-    </section>
+<h1>Endora Marie McNeary</h1>
 
-    <!-- ABOUT -->
-    <section class="about-section">
-      <h2>About</h2>
+<p class="subtitle">
+music / video / experiments
+</p>
 
-      <p>
-        My work lives where memory distorts into sound. Influenced by latinidad, psychedelia, and industrial noise,
-        I build from fragments — rhythm, language, emotion — shaping worlds that feel intimate, uncanny, and alive.
-      </p>
+<div class="video-section">
 
-      <p>
-        I’m drawn to the spaces between genres: where distortion softens into melody, where ritual becomes rhythm,
-        and where identity cracks open into something new.
-      </p>
-    </section>
+<a href="https://youtu.be/3b1kJX5bN0I?si=vNbArPwzFglpZPs3" target="_blank">
 
-    <!-- ARTICLES -->
-    <section class="articles-section">
-      <h2>Articles</h2>
+<img
+src="https://img.youtube.com/vi/3b1kJX5bN0I/maxresdefault.jpg"
+alt="Gente Extraña">
 
-      <article class="article-card">
-        <a href="https://afropop.org/articles/tokischa-peralta-overcomes-backlash-with-her-whole-new-show" target="_blank" rel="noopener">
-          Tokischa Peralta Overcomes Backlash With Attitude
-        </a>
-        <p>Afropop Worldwide · Mar 8, 2023 · by Endora McNeary</p>
-      </article>
+</a>
 
-      <p>
-        <a href="https://endoramcneary.journoportfolio.com/" target="_blank" rel="noopener">
-          Full archive →
-        </a>
-      </p>
-    </section>
+</div>
 
-    <footer>
-      © <span id="year"></span> Endora McNeary
-    </footer>
+<div class="spotify-section">
 
-  </main>
+<iframe
+style="border-radius:12px"
+src="https://open.spotify.com/embed/album/4BAhQwdrv5crlCOmoBkChL?utm_source=generator"
+width="100%"
+height="352"
+frameborder="0"
+allowfullscreen=""
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+loading="lazy">
+</iframe>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+</div>
+
+<section class="about">
+
+<h2>About</h2>
+
+<p>
+My work lives where memory distorts into sound.
+Influenced by latinidad, psychedelia, and industrial noise,
+I build from fragments—rhythm, language, emotion—
+shaping worlds that feel intimate, uncanny, and alive.
+</p>
+
+<p>
+I'm drawn to the spaces between genres:
+where distortion softens into melody,
+where ritual becomes rhythm,
+and where identity cracks open into something new.
+</p>
+
+<p>
+Everything I make is part of a larger conversation—
+with memory, place, and transformation.
+</p>
+
+</section>
+
+</div>
+
+<aside class="right-column">
+
+<h2>Articles</h2>
+
+<div class="article">
+
+<a href="https://afropop.org/articles/tokischa-peralta-overcomes-backlash-with-her-whole-new-show"
+target="_blank">
+
+Tokischa Peralta Overcomes Backlash With Attitude
+
+</a>
+
+<p class="meta">
+Afropop Worldwide · March 8, 2023 · Endora McNeary
+</p>
+
+<p>
+A feature on Tokischa's rise,
+artistic controversy,
+and unapologetic vision.
+</p>
+
+</div>
+
+<p>
+
+<a href="https://endoramcneary.journoportfolio.com/"
+target="_blank">
+
+Full archive →
+
+</a>
+
+</p>
+
+</aside>
+
+</main>
+
+<footer>
+
+© <span id="year"></span> Endora McNeary
+
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+new Date().getFullYear();
+</script>
+
 </body>
 </html>
   

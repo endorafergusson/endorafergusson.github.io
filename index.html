@@ -3,214 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gente Extraña — Endora</title>
-  <meta name="description" content="Gente Extraña — homepage for Endora Marie McNeary" />
+  <title>Endora McNeary</title>
+  <meta name="description" content="Music, video, and writing by Endora McNeary" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- MOBILE LINK HUB -->
-  <main class="mobile-hub">
-  <img class="mobile-logo" src="soundcloudbanner2.jpg" alt="Jefachica">
+  <main class="site">
 
-  <p class="mobile-tagline">music / video / experiments</p>
+    <!-- TOP LOGO -->
+    <header class="top">
+      <img class="logo" src="soundcloudbanner2.jpg" alt="Jefachica logo">
 
-  <nav class="mobile-links" aria-label="Mobile links">
-    <a href="https://www.youtube.com/@jefachica" target="_blank" rel="noopener">YouTube</a>
-    <a href="https://soundcloud.com/jefachica" target="_blank" rel="noopener">SoundCloud</a>
-    <a href="https://jefachica.bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a>
-  </nav>
-</main>
-  
-  <div class="layout">
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="brand">Menu</div>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#articles">Articles</a>
+      <nav class="links" aria-label="Main links">
+        <a href="https://www.youtube.com/@jefachica" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://soundcloud.com/jefachica" target="_blank" rel="noopener">SoundCloud</a>
+        <a href="https://jefachica.bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a>
       </nav>
-    </aside>
+    </header>
 
-    <!-- MAIN CONTENT -->
-    <div class="content" id="home">
+    <!-- INTRO -->
+    <section class="intro">
+      <h1>Endora Marie McNeary</h1>
+      <p>music / video / experiments</p>
+    </section>
 
-      <!-- HEADER -->
-      <header class="header">
-        <div class="name-block">
-          <h1 class="name">Endora Marie McNeary</h1>
-          <p class="address">PO Box 122 💌</p>
-          <p class="address">Danbury, CT 06810</p>
-        </div>
+    <!-- VIDEO -->
+    <section class="video-section">
+      <a class="thumbnail" href="https://youtu.be/3b1kJX5bN0I?si=vNbArPwzFglpZPs3" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/3b1kJX5bN0I/hqdefault.jpg" alt="Gente Extraña YouTube thumbnail">
+        <span class="play-button"></span>
+      </a>
+    </section>
 
-        <div class="page-title">Gente Extraña</div>
+    <!-- SPOTIFY -->
+    <section class="spotify-section">
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/album/4BAhQwdrv5crlCOmoBkChL?utm_source=generator"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </section>
 
-        <!-- SOCIAL ICONS -->
-        <div class="socials" aria-label="Music links">
+    <!-- PROJECT TEXT -->
+    <section class="text-section">
+      <p>
+        This project is a celebration of strangeness — of the beauty that lives inside a fragmented identity.
+        My Spanglish Doors cover is about transforming what once felt disjointed, invisible, or out of place
+        into something original and whole.
+      </p>
 
-          <!-- YOUTUBE -->
-          <a href="https://www.youtube.com/@jefachica" class="yt" title="YouTube" target="_blank" rel="noopener">
-            <svg class="ico" viewBox="0 0 24 24" role="img">
-              <path fill="currentColor" d="M23.5 6.2c-.3-1.2-1.3-2.1-2.5-2.3C18.7 3.5 12 3.5 12 3.5s-6.7 0-9 .4c-1.2.3-2.2 1.1-2.5 2.3C0 8 0 12 0 12s0 4 .5 5.8c.3 1.2 1.3 2.1 2.5 2.3 2.3.4 9 .4 9 .4s6.7 0 9-.4c1.2-.3 2.2-1.1 2.5-2.3C24 16 24 12 24 12s0-4-.5-5.8zM9.5 15.6V8.5l6.5 3.6-6.5 3.5z"/>
-            </svg>
-          </a>
+      <p>
+        The Doors were one of the first bands my dad exposed me to, shaping my sense of sound and feeling,
+        while my mother’s latinidad and the first-generation experience taught me depth, distance, and duality.
+      </p>
 
-          <!-- SOUNDCLOUD -->
-          <a href="https://soundcloud.com/jefachica" class="sc" title="SoundCloud" target="_blank" rel="noopener">
-            <svg class="ico" viewBox="0 0 50 23" role="img">
-              <path fill="currentColor" d="M49.1 15.5a6.9 6.9 0 01-7 6.5H25.4a1.4 1.4 0 01-1.4-1.4V2.5c0-.7.4-1.3.9-1.5C26.5 0 29.7 0 29.7 0a11 11 0 015.6 1.6 11.1 11.1 0 015.3 7.3 6.5 6.5 0 011.7-.2 6.7 6.7 0 016.8 6.9zm-27.2-11.8c.6 6.1.9 11.7 0 17.8a.5.5 0 01-1 0c-.8-6-.5-11.7 0-17.8a.5.5 0 01.8-.5c.2.1.3.3.2.5zM18.6 21.5a.6.6 0 01-1.2 0 68 68 0 010-15.7.6.6 0 011.2 0c.7 5.2.7 10.5 0 15.7zm-3.4-16.3c.6 5.6.8 10.6 0 16.2a.5.5 0 01-1 0c-.8-5.5-.5-10.7 0-16.2a.6.6 0 011.1 0zm-3.4 16.3a.6.6 0 01-1.1 0 57.4 57.4 0 010-14.7.6.6 0 011.2 0 53.5 53.5 0 01-.1 14.7zM8.4 10.5c.9 3.8.5 7.1 0 11a.5.5 0 01-1 0c-.5-3.8-.9-7.3 0-11a.6.6 0 011 0zm-3.4-.6c.8 3.9.5 7.2 0 11.1-.1.6-1 .6-1.1 0-.5-3.8-.7-7.2 0-11.1a.6.6 0 011.1 0zm-3.4 1.9c.8 2.6.5 4.7 0 7.3a.5.5 0 01-1 0c-.5-2.6-.7-4.7-.1-7.3a.6.6 0 011.1 0z"/>
-            </svg>
-          </a>
+      <p>
+        By blending languages, sounds, and memories, I reclaim my originality. I embrace the contradictions.
+        I honor the wounds and the wonders.
+      </p>
+    </section>
 
-          <!-- BANDCAMP -->
-          <a href="https://jefachica.bandcamp.com/?from=viewsite_dashboard" class="bc" title="Bandcamp" target="_blank" rel="noopener">
-            <svg class="ico" role="img" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M0 3.5v17h24v-17H0zm9.2 2.8h5.7l-4.1 11.3H5.1L9.2 6.3z"/>
-            </svg>
-          </a>
-        </div>
-      </header>
+    <!-- ABOUT -->
+    <section class="about-section">
+      <h2>About</h2>
 
-    <div class="thumbnail-container" id="video">
-  <a class="thumbnail" href="https://youtu.be/3b1kJX5bN0I?si=vNbArPwzFglpZPs3" target="_blank" rel="noopener">
-    <img src="https://img.youtube.com/vi/3b1kJX5bN0I/hqdefault.jpg" alt="Gente Extraña YouTube Thumbnail">
-    <div class="play-button"></div>
-  </a>
-</div>
+      <p>
+        My work lives where memory distorts into sound. Influenced by latinidad, psychedelia, and industrial noise,
+        I build from fragments — rhythm, language, emotion — shaping worlds that feel intimate, uncanny, and alive.
+      </p>
 
-<!-- SPOTIFY ALBUM -->
-<div class="spotify-container" id="music">
-  <iframe
-    style="border-radius:12px"
-    src="https://open.spotify.com/embed/album/4BAhQwdrv5crlCOmoBkChL?utm_source=generator"
-    width="100%"
-    height="352"
-    frameborder="0"
-    allowfullscreen=""
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
-</div>
+      <p>
+        I’m drawn to the spaces between genres: where distortion softens into melody, where ritual becomes rhythm,
+        and where identity cracks open into something new.
+      </p>
+    </section>
 
-      <!-- BODY TEXT -->
-      <div class="body-text">
-        <p>
-          This project is a <span class="hl">celebration of strangeness</span> — of the beauty that lives inside a fragmented identity.
-          My Spanglish Doors cover is about transforming what once felt disjointed, invisible, or out of place into something original and whole.
-        </p>
+    <!-- ARTICLES -->
+    <section class="articles-section">
+      <h2>Articles</h2>
 
-        <blockquote class="pull-quote">
-          This work is a <span class="hl">dialogue with my younger self</span> — a manifesto for anyone who’s ever felt invisible, unfit, or too much.
-        </blockquote>
+      <article class="article-card">
+        <a href="https://afropop.org/articles/tokischa-peralta-overcomes-backlash-with-her-whole-new-show" target="_blank" rel="noopener">
+          Tokischa Peralta Overcomes Backlash With Attitude
+        </a>
+        <p>Afropop Worldwide · Mar 8, 2023 · by Endora McNeary</p>
+      </article>
 
-        <p>
-          The Doors were one of the first bands my dad exposed me to, shaping my sense of sound and feeling, while my mother’s latinidad and the
-          first-generation experience taught me depth, distance, and duality. I filmed the video at the Jersey Shore, a place he used to take me,
-          grounding the work in memory and transformation.
-        </p>
+      <p>
+        <a href="https://endoramcneary.journoportfolio.com/" target="_blank" rel="noopener">
+          Full archive →
+        </a>
+      </p>
+    </section>
 
-        <p>
-          The style of this cover reflects both sides of my inheritance: the rock and psychedelia that run through my father’s influence, and the
-          cultural strangeness and emotional intensity I carry through my mother. Together, they form a dialogue with my younger self — and an offering
-          to anyone who has ever felt the same.
-        </p>
+    <footer>
+      © <span id="year"></span> Endora McNeary
+    </footer>
 
-        <p>
-          By <span class="hl">blending languages, sounds, and memories</span>, I reclaim my originality. I embrace the contradictions. I honor
-          the wounds and the wonders. And I transform the fragments of loss into something whole, sublime, and defiantly my own.
-        </p>
-      </div>
+  </main>
 
-      <!-- ABOUT SECTION -->
-      <section class="about-section" id="about">
-        <div class="about-wrap">
-          <h2>About</h2>
-          <div class="about-body">
-            <div class="about-body">
-
-  <p>
-    My work lives where memory distorts into sound.<br>
-    Influenced by latinidad, psychedelia, and industrial noise,<br>
-    I build from fragments — rhythm, language, emotion —<br>
-    shaping worlds that feel intimate, uncanny, and alive.
-  </p>
-
-  <p>
-    I’m drawn to the spaces between genres:<br>
-    where distortion softens into melody,<br>
-    where ritual becomes rhythm,<br>
-    and where identity cracks open into something new.
-  </p>
-
-  <p>
-    Everything I make is part of a larger conversation —<br>
-    with my past, with my body, and with the ghosts I carry.<br>
-    I create to transform what was once overlooked<br>
-    into something undeniable, tender, and defiantly original.
-  </p>
-
-</div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ARTICLES -->
-      <section class="articles-wrap" id="articles">
-        <div class="articles-head">
-          <h2>Articles</h2>
-          <span class="pin">📌 Pinned</span>
-        </div>
-
-       <div class="article-card">
-  <a href="https://afropop.org/articles/tokischa-peralta-overcomes-backlash-with-her-whole-new-show" target="_blank" rel="noopener">
-    
-  
-    <!-- TITLE -->
-    Tokischa Peralta Overcomes Backlash With Attitude
-  </a>
-
-  <div class="meta">Afropop Worldwide · Mar 8, 2023 · by Endora McNeary</div>
-
-  <p>
-    A feature on Tokischa’s rise, artistic controversy, and unapologetic vision.
-  </p>
-</div>
-
-        <div class="archive-link">
-          <p class="meta">Full archive:</p>
-          <a href="https://endoramcneary.journoportfolio.com/" target="_blank" rel="noopener">
-            endoramcneary.journoportfolio.com →
-          </a>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer>
-        © <span id="year"></span> Endora McNeary
-      </footer>
-
-    </div> <!-- end content -->
-  </div> <!-- end layout -->
-
-  <!-- SCRIPTS -->
   <script>
-    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
-      
-      
   
 
 

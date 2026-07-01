@@ -1,526 +1,117 @@
-/* =========================================================
-   GLOBAL BASE THEME (LIGHT MODE)
-   ========================================================= */
-:root {
-  --bg: #ffffff;
-  --fg: #000000;
-  --muted: #444444;
-  --accent: #f5f5f5;
-  --link: #000000;
-  --sidebar-w: 180px;
-  --maxw: 1100px;
-}
-
-/* Reset + base */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  line-height: 1.5;
-}
-
-a {
-  color: var(--link);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* =========================================================
-   LAYOUT
-   ========================================================= */
-.layout {
-  display: flex;
-  min-height: 100vh;
-}
-
-.sidebar {
-  position: sticky;
-  top: 0;
-  align-self: flex-start;
-  height: 100vh;
-  width: var(--sidebar-w);
-  padding: 24px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  letter-spacing: .2px;
-  border-right: 1px solid #e0e0e0;
-}
-
-/* =========================================================
-   SIDEBAR CONTENT
-   ========================================================= */
-.brand {
-  font-weight: 800;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  color: var(--muted);
-}
-
-.nav {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 8px;
-}
-
-.nav a {
-  font-weight: 600;
-  color: #000;
-}
-
-/* =========================================================
-   CONTENT AREA
-   ========================================================= */
-.content {
-  flex: 1;
-  min-width: 0;
-  background: #ffffff;
-  color: #000;
-}
-
-.header {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 28px 24px 0 24px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.name-block { margin: 0 0 18px 0; }
-
-.name {
-  font-family: 'Great Vibes', cursive;
-  font-size: 28px;
-  line-height: 1.1;
-  margin: 0 0 8px 0;
-  position: relative;
-  display: inline-block;
-}
-
-/* ⭐ REMOVED BACKGROUND / NOISE BEHIND NAME */
-/* .name::after { ... } has been fully deleted */
-
-.address {
-  margin: 0;
-  color: var(--muted);
-}
-
-.page-title {
-  font-size: 64px;
-  line-height: 1;
-  margin: 18px 0 24px 0;
-  font-weight: 800;
-}
-
-/* ------------------------------------------------------------
-   SOCIAL ICONS
------------------------------------------------------------- */
-.socials {
-  display: flex;
-  gap: 18px;
-  margin: 18px 0 6px;
-  align-items: center;
-}
-
-.socials a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.socials .ico {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-/* Brand colors restored */
-.yt .ico {
-  color: #FF0000 !important;       /* YouTube red */
-}
-
-.sc .ico {
-  color: #FF7700 !important;       /* SoundCloud orange */
-}
-
-.bc .ico {
-  color: #1DA0C3 !important;       /* Bandcamp teal */
-}
-
-/* Hover effect — OPTION B (recommended)
-   brighten + float upward */
-.socials a:hover .ico {
-  filter: brightness(1.35);
-  transform: translateY(-4px);
-}
-
-/* =========================================================
-   VIDEO THUMBNAIL
-   ========================================================= */
-.thumbnail-container {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 40px 24px;
-  display: flex;
-  justify-content: center;
-}
-
-.thumbnail {
-  display: block;
-  max-width: 720px;
-  width: 100%;
-  aspect-ratio: 16/9;
-  position: relative;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  transition: 0.3s ease;
-}
-.thumbnail:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 28px rgba(0,0,0,0.3);
-}
-
-.thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90px;
-  height: 90px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  transition: 0.3s;
-}
-
-.play-button::before {
-  content:"";
-  border-left: 30px solid #fff;
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent;
-  margin-left: 8px;
-}
-
-.thumbnail:hover .play-button {
-  background: rgba(255,0,0,0.8);
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-/* =========================================================
-   BODY TEXT
-   ========================================================= */
-.body-text {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 16px 24px 72px 24px;
-  color: #000;
-  font-size: 18px;
-  line-height: 1.75;
-}
-
-.body-text p { margin: 0 0 18px 0; }
-
-.hl {
-  background: linear-gradient(transparent 60%, rgba(255,200,120,0.35) 60%);
-  padding: 0 .04em;
-}
-
-.pull-quote {
-  margin: 28px auto;
-  padding: 14px 16px;
-  background: rgba(0,0,0,0.05);
-  border-left: 6px solid #000;
-  font-weight: 800;
-  line-height: 1.35;
-  max-width: 640px;
-}
-
-.pull-quote .hl {
-  background: linear-gradient(transparent 55%, rgba(255,200,120,0.5) 55%);
-}
-
-p { line-height: 1.6; }
-
-/* =========================================================
-   MUSIC-VIDEO NOTICE
-   ========================================================= */
-.mv-notice {
-  background: #ffffff;
-  color: #111;
-  border: 1px solid #ccc;
-  padding: 12px 16px;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  border-radius: 12px;
-  margin: 12px auto 18px;
-  max-width: var(--maxw);
-}
-
-.mv-badge {
-  font: 700 12px/1 Inter, system-ui, sans-serif;
-  padding: 3px 8px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
-.mv-text {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.35;
-}
-
-.mv-text a {
-  color: var(--link);
-  text-decoration: underline;
-}
-
-.mv-close {
-  margin-left: auto;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  font-size: 18px;
-  cursor: pointer;
-  line-height: 1;
-  padding: 2px 6px;
-}
-
-/* =========================================================
-   ABOUT SECTION
-   ========================================================= */
-.about-section {
-  background: #ffffff;
-  color: #000;
-  padding: 80px 0;
-}
-
-.about-wrap {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 24px 24px 80px 24px;
-}
-
-.about-wrap h2 {
-  margin: 12px 0 16px 0;
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.about-body {
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.8;
-  font-size: 18px;
-}
-
-/* =========================================================
-   ARTICLES
-   ========================================================= */
-.articles-wrap {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 24px 24px 96px;
-}
-
-.articles-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 8px 0 20px;
-}
-
-.pin {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #ffd166;
-  color: #000;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: 12px;
-}
-
-.article-card {
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  background: #fafafa;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-
-}
-
-.article-card a {
-  font-weight: 700;
-  color: #000;
-  text-decoration: none;
-}
-
-.meta {
-  font-size: 13px;
-  color: #555;
-}
-
-.archive-link { margin-top: 16px; }
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-footer {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 24px;
-  border-top: 1px solid #ccc;
-  color: #555;
-}
-
-/* =========================================================
-   MOBILE (≤899px)
-   ========================================================= */
-@media (max-width: 899px) {
-
-  .layout { flex-direction: column; }
-
-  .sidebar {
-    position: relative;
-    height: auto;
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #e0e0e0;
-    background: #ffffff !important;
-  }
-
-  .nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .brand,
-  .nav a {
-    color: #000 !important;
-  }
-}
-
-/* =========================================================
-   DESKTOP (≥900px)
-   ========================================================= */
-@media (min-width: 900px) {
-
-  .sidebar {
-    background-color: transparent;
-    border-right: none;
-
-    background-image:
-      linear-gradient(45deg, #000 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, #000 75%),
-      linear-gradient(45deg, #000 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, #000 75%);
-    background-size: 28px 28px;
-    background-position: 0 0, 0 0, 14px 14px, 14px 14px;
-
-    padding: 0;
-  }
-
-  .sidebar > * {
-    background: #f5e8c8;
-    padding: 24px 18px;
-    border-left: 3px solid #000;
-    border-bottom: 3px solid #000;
-    margin: 0;
-  }
-
-  .brand,
-  .nav a {
-    color: #000000;
-  }
-}
-.spotify-container {
-  max-width: 720px;
-  margin: 2rem auto;
-}
-
-/* =========================================================
-   MOBILE LINK HUB
-   ========================================================= */
-
-.mobile-hub {
-  display: none;
-}
-
-@media (max-width: 899px) {
-  .layout {
-    display: none !important;
-  }
-
-  .mobile-hub {
-    display: flex !important;
-    min-height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    background: #ffffff;
-    padding: 0 24px 48px;
-  }
-
-.mobile-logo {
-  display: block;
-  width: 100%;
-  max-width: 760px;
-  height: auto;
-  margin: 28px auto 36px;
-}
-}
-  }
-
-  .mobile-tagline {
-    margin: 0 0 34px;
-    font-size: 13px;
-    letter-spacing: .05em;
-    color: #666;
-    text-transform: none;
-    text-align: center;
-  }
-
-  .mobile-links {
-    width: 100%;
-    max-width: 420px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .mobile-links a {
-    display: block;
-    padding: 18px 20px;
-    border: 1.5px solid #000;
-    border-radius: 999px;
-    background: #fff;
-    color: #000;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: .03em;
-    text-decoration: none;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Endora McNeary</title>
+  <meta name="description" content="Music, video, and writing by Endora McNeary" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="site">
+
+    <!-- TOP LOGO -->
+    <header class="top">
+      <img class="logo" src="soundcloudbanner2.jpg" alt="Jefachica logo">
+
+      <nav class="links" aria-label="Main links">
+        <a href="https://www.youtube.com/@jefachica" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://soundcloud.com/jefachica" target="_blank" rel="noopener">SoundCloud</a>
+        <a href="https://jefachica.bandcamp.com/" target="_blank" rel="noopener">Bandcamp</a>
+      </nav>
+    </header>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <h1>Endora Marie McNeary</h1>
+      <p>music / video / experiments</p>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="video-section">
+      <a class="thumbnail" href="https://youtu.be/3b1kJX5bN0I?si=vNbArPwzFglpZPs3" target="_blank" rel="noopener">
+        <img src="https://img.youtube.com/vi/3b1kJX5bN0I/hqdefault.jpg" alt="Gente Extraña YouTube thumbnail">
+        <span class="play-button"></span>
+      </a>
+    </section>
+
+    <!-- SPOTIFY -->
+    <section class="spotify-section">
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/album/4BAhQwdrv5crlCOmoBkChL?utm_source=generator"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </section>
+
+    <!-- PROJECT TEXT -->
+    <section class="text-section">
+      <p>
+        This project is a celebration of strangeness — of the beauty that lives inside a fragmented identity.
+        My Spanglish Doors cover is about transforming what once felt disjointed, invisible, or out of place
+        into something original and whole.
+      </p>
+
+      <p>
+        The Doors were one of the first bands my dad exposed me to, shaping my sense of sound and feeling,
+        while my mother’s latinidad and the first-generation experience taught me depth, distance, and duality.
+      </p>
+
+      <p>
+        By blending languages, sounds, and memories, I reclaim my originality. I embrace the contradictions.
+        I honor the wounds and the wonders.
+      </p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section">
+      <h2>About</h2>
+
+      <p>
+        My work lives where memory distorts into sound. Influenced by latinidad, psychedelia, and industrial noise,
+        I build from fragments — rhythm, language, emotion — shaping worlds that feel intimate, uncanny, and alive.
+      </p>
+
+      <p>
+        I’m drawn to the spaces between genres: where distortion softens into melody, where ritual becomes rhythm,
+        and where identity cracks open into something new.
+      </p>
+    </section>
+
+    <!-- ARTICLES -->
+    <section class="articles-section">
+      <h2>Articles</h2>
+
+      <article class="article-card">
+        <a href="https://afropop.org/articles/tokischa-peralta-overcomes-backlash-with-her-whole-new-show" target="_blank" rel="noopener">
+          Tokischa Peralta Overcomes Backlash With Attitude
+        </a>
+        <p>Afropop Worldwide · Mar 8, 2023 · by Endora McNeary</p>
+      </article>
+
+      <p>
+        <a href="https://endoramcneary.journoportfolio.com/" target="_blank" rel="noopener">
+          Full archive →
+        </a>
+      </p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Endora McNeary
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
   

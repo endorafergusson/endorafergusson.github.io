@@ -184,3 +184,23 @@ footer {
     border-left:30px solid white;
     filter:drop-shadow(0 0 8px rgba(0,0,0,.5));
 }
+.mobile-tagline {
+    display: none;
+}
+
+@media (max-width: 899px) {
+    .left-column > h1,
+    .left-column > .subtitle {
+        display: none;
+    }
+
+    .mobile-tagline {
+        display: block;
+        margin: 12px 0 20px;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        text-transform: lowercase;
+    }
+}

@@ -95,11 +95,11 @@ body {
 /* Future scrolling content */
 
 .work {
-.work {
     min-height: 100vh;
-    padding: 64px 22px;
+    padding: 24px 22px 64px;
 
     background: var(--navy);
+}
 }
 
 .soundcloud-list {

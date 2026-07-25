@@ -177,10 +177,29 @@ body {
     }
 
     .work {
-        min-height: 100vh;
-        padding: 80px 8vw;
+    .work {
+    min-height: 100vh;
+    padding: 64px 22px;
 
-        background: #06152f;
-        color: #d5eaff;
+    background: var(--navy);
+}
+
+.soundcloud-list {
+    width: min(100%, 760px);
+    margin: 0 auto;
+
+    display: grid;
+    gap: 30px;
+}
+
+.soundcloud-player {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(142, 203, 255, 0.2);
+    border-radius: 4px;
+
+    box-shadow:
+        0 0 24px rgba(72, 139, 207, 0.08);
+}
     }
 }

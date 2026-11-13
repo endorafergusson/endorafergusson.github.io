@@ -7,11 +7,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>jefach1ca</title>
+
     <meta
         name="description"
-        content="Music, video and experiments by jefach1ca">
+        content="Music, video, articles and experiments by jefach1ca"
+    >
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* Articles button */
+
+        .articles-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            width: fit-content;
+            min-width: 150px;
+            margin: 0 auto 28px;
+            padding: 12px 20px;
+
+            color: #b8ddff;
+            background: rgba(142, 203, 255, 0.07);
+            border: 1px solid rgba(142, 203, 255, 0.35);
+            border-radius: 12px;
+
+            font-size: 14px;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+
+            transition: background 0.2s ease,
+                        transform 0.2s ease;
+        }
+
+        .articles-button:hover {
+            background: rgba(142, 203, 255, 0.16);
+            transform: translateY(-2px);
+        }
+
+        .articles-icon {
+            font-size: 17px;
+        }
+
+        .external-arrow {
+            opacity: 0.65;
+        }
+
+
+        /* Featured SoundCloud track */
+
+        .featured-track {
+            margin-bottom: 32px;
+        }
+
+        .featured-track .soundcloud-player {
+            display: block;
+            width: 100%;
+            border-radius: 12px;
+        }
+
+
+        /* Music video */
+
+        .video-section {
+            width: 100%;
+            max-width: 460px;
+            margin: 0 auto 36px;
+        }
+
+        .video-heading {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+
+            color: #b8ddff;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: lowercase;
+        }
+
+        .video-symbol {
+            color: #8ecbff;
+        }
+
+        .video-thumbnail {
+            position: relative;
+            display: block;
+            overflow: hidden;
+
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 14px;
+
+            background: #101827;
+            border: 1px solid rgba(142, 203, 255, 0.2);
+
+            transition: transform 0.25s ease,
+                        border-color 0.25s ease;
+        }
+
+        .video-thumbnail:hover {
+            transform: translateY(-3px);
+            border-color: #8ecbff;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+
+            background: rgba(10, 18, 34, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+
+            color: white;
+            font-size: 19px;
+            backdrop-filter: blur(8px);
+        }
+
+        .video-caption {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+
+            color: #b8ddff;
+            font-size: 12px;
+            letter-spacing: 0.04em;
+        }
+
+        .video-caption-detail {
+            color: #8ecbff;
+            opacity: 0.7;
+        }
+
+
+        /* Remaining SoundCloud players */
+
+        .soundcloud-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .soundcloud-list .soundcloud-player {
+            display: block;
+            width: 100%;
+            border-radius: 12px;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            .video-section {
+                max-width: 100%;
+            }
+
+            .articles-button {
+                padding: 11px 18px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -28,25 +208,102 @@
 
     </header>
 
+
     <main id="work" class="work">
 
-        <!-- YouTube Music Video -->
-        <div class="youtube-video">
-            <iframe
-                src="https://www.youtube.com/embed/3b1kJX5bN0I"
-                title="Gente Extraña"
-                loading="lazy"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
-        </div>
 
-        <!-- SoundCloud Music -->
-        <section class="soundcloud-list" aria-label="Selected music">
+        <!-- ARTICLES -->
+
+        <a
+            class="articles-button"
+            href="https://endoramcneary.journoportfolio.com"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="articles-icon">✳</span>
+            <span>articles</span>
+            <span class="external-arrow">↗</span>
+        </a>
+
+
+
+        <!-- ISOTHERM -->
+
+        <section
+            class="featured-track"
+            aria-label="Latest music"
+        >
+
+            <iframe
+                class="soundcloud-player"
+                title="Isotherm by jefach1ca"
+                width="100%"
+                height="166"
+                scrolling="no"
+                frameborder="0"
+                allow="autoplay"
+                loading="lazy"
+                src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fjefachica%2Fisotherm&color=%238ecbff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+            </iframe>
+
+        </section>
+
+
+
+        <!-- MUSIC VIDEO: GENTE EXTRAÑA -->
+
+        <section
+            class="video-section"
+            aria-label="Music video"
+        >
+
+            <div class="video-heading">
+                <span class="video-symbol">✦</span>
+                <span>music video</span>
+            </div>
+
+            <a
+                class="video-thumbnail"
+                href="https://www.youtube.com/watch?v=3b1kJX5bN0I"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Watch Gente Extraña music video on YouTube"
+            >
+
+                <img
+                    src="https://img.youtube.com/vi/3b1kJX5bN0I/hqdefault.jpg"
+                    alt="Gente Extraña music video thumbnail"
+                    loading="lazy"
+                >
+
+                <span class="play-button">▶</span>
+
+            </a>
+
+            <div class="video-caption">
+
+                <span>gente extraña</span>
+
+                <span class="video-caption-detail">
+                    watch ↗
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- REMAINING SOUNDCLOUD MUSIC -->
+
+        <section
+            class="soundcloud-list"
+            aria-label="Selected music"
+        >
+
 
             <!-- Solita La Half Human M4mb0 -->
+
             <iframe
                 class="soundcloud-player"
                 title="Solita La Half Human M4mb0 by jefach1ca"
@@ -59,7 +316,10 @@
                 src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fjefachica%2Fsolita-la-half-human-m4mb0&color=%238ecbff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
             </iframe>
 
+
+
             <!-- Pigshine Export -->
+
             <iframe
                 class="soundcloud-player"
                 title="Pigshine Export by jefach1ca"
@@ -72,7 +332,10 @@
                 src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fjefachica%2Fpigshineexport&color=%238ecbff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
             </iframe>
 
+
+
             <!-- Selected Track 2 -->
+
             <iframe
                 class="soundcloud-player"
                 title="Selected track 2 by jefach1ca"
@@ -85,7 +348,10 @@
                 src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fjefachica%2F0rvarxt2ckul&color=%238ecbff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
             </iframe>
 
+
+
             <!-- Bellakeo Test 2 -->
+
             <iframe
                 class="soundcloud-player"
                 title="Bellakeo Test 2 by jefach1ca"
@@ -98,13 +364,16 @@
                 src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fjefachica%2Fbellakeo1-test-2&color=%238ecbff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
             </iframe>
 
+
         </section>
+
 
     </main>
 
 </body>
 
 </html>
+
 
 
 
